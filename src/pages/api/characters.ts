@@ -1,7 +1,8 @@
 import { connectToDatabase } from "../../utils/db";
-import Character from "../../models/Character";
+import Character from "../../../models/Character";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(req, res) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   await connectToDatabase();
 
   if (req.method === "POST") {
