@@ -6,4 +6,10 @@ const nextConfig: NextConfig = {
   },
 };
 
+module.exports = {
+  images: {
+    domains: ['animeheroes.s3.sa-east-1.amazonaws.com'],
+  },
+};
+
 export default nextConfig;

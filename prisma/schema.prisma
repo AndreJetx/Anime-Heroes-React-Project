@@ -9,6 +9,7 @@ datasource db {
 
 model Character {
   id        String @id @default(auto()) @map("_id") @db.ObjectId
+  anime     String
   name      String
   power     String
   imageUrl  String

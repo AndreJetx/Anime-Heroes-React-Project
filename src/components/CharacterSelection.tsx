@@ -1,33 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 interface Character {
   name: string;
-  gif: string;
   power: string;
+  gifUrl: string;
 }
 
-const CharacterSelection: React.FC = () => {
-  const [character, setCharacter] = useState<Character | null>(null);
+interface CharacterSelectionProps {
+  character: Character | null;
+}
 
-  useEffect(() => {
-    fetch("/api/characters/selected")
-      .then((response) => response.json())
-      .then((data) => setCharacter(data))
-      .catch((error) => console.error("Erro ao carregar personagem:", error));
-  }, []);
-
-  if (!character) {
-    return <p>Carregando...</p>;
-  }
-
+const CharacterSelection: React.FC<CharacterSelectionProps> = ({ character }) => {
   return (
-    <section className="personagem-selecionado">
-      <img className="personagem-grande" src={character.gif} alt={`Personagem Selecionado: ${character.name}`} />
-      <div className="informacao-personagem">
-        <h2 className="nome-personagem">{character.name}</h2>
-        <p className="descricao-personagem">{character.power}</p>
-      </div>
-    </section>
+    <div className="character-selection">
+      {character ? (
+        <div>
+          <h3>{character.name}</h3>
+          <p><strong>Poder:</strong> {character.power}</p>
+          <img
+            src={character.gifUrl}
+            alt={`${character.name} GIF`}
+            className="character-gif"
+            width={150}
+            height={150}
+          />
+        </div>
+      ) : (
+        <p>Selecione um personagem para ver detalhes.</p>
+      )}
+    </div>
   );
 };
 

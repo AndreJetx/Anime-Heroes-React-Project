@@ -14,18 +14,21 @@ async function main() {
   await prisma.character.createMany({
     data: [
       {
+        anime: "Dragon Ball Z",
         name: "Android 21",
         power: "Mago De Batalha",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-androide21.png",
         gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-androide21.gif",
       },
       {
+        anime: "Dragon Ball Z",
         name: "Bardok",
         power: "Lutador",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-bardok.png",
         gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-bardok.gif",
       },
       {
+        anime: "Dragon Ball Z",
         name: "Cell",
         power: "Mago De Batalha",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-cell.png",
@@ -45,3 +48,6 @@ main()
   .finally(async () => {
     await prisma.$disconnect();
   });
+
+
+// so funciona com npx tsx prisma/seed.ts
