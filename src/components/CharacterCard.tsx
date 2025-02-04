@@ -16,7 +16,6 @@ interface CharacterCardProps {
 const CharacterCard: React.FC<CharacterCardProps> = ({ characters }) => {
   return (
     <div className="personagens">
-      <h2 className="titulo">Personagens</h2>
       <ul className="lista-de-personagem">
         {characters.length === 0 ? (
           <p>Nenhum personagem encontrado para este anime.</p> // Mensagem caso nenhum personagem seja filtrado

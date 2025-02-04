@@ -1,33 +1,42 @@
-import React, { useState } from "react";
+import React from "react";
+import Image from "next/image";
 
 interface Character {
+  _id: string;
   name: string;
-  power: string;
-  gifUrl: string;
+  gifUrl?: string;
 }
 
 interface CharacterSelectionProps {
-  character: Character | null;
+  characters: Character[];
 }
 
-const CharacterSelection: React.FC<CharacterSelectionProps> = ({ character }) => {
+const CharacterSelection: React.FC<CharacterSelectionProps> = ({ characters }) => {
+  // Garante que characters seja um array válido
+  const validCharacters = Array.isArray(characters) ? characters : [];
+
+  // Filtra os personagens que têm gifUrl
+  const charactersWithGif = validCharacters.filter((char) => char.gifUrl);
+
   return (
-    <div className="character-selection">
-      {character ? (
-        <div>
-          <h3>{character.name}</h3>
-          <p><strong>Poder:</strong> {character.power}</p>
-          <img
-            src={character.gifUrl}
-            alt={`${character.name} GIF`}
-            className="character-gif"
-            width={150}
-            height={150}
-          />
-        </div>
-      ) : (
-        <p>Selecione um personagem para ver detalhes.</p>
-      )}
+    <div className="gif-container">
+      <ul className="gif-list">
+        {charactersWithGif.length === 0 ? (
+          <p>Nenhum GIF disponível.</p>
+        ) : (
+          charactersWithGif.map((char) => (
+            <li key={char._id} className="gif-item">
+              <Image
+                src={char.gifUrl!}
+                alt={`GIF de ${char.name}`}
+                className="gif-image"
+                width={100}
+                height={100}
+              />
+            </li>
+          ))
+        )}
+      </ul>
     </div>
   );
 };

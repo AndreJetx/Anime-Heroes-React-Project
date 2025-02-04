@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import CharacterCard from "../components/CharacterCard";
-import AnimeFilter from "../components/AnimeFilter"; // ✅ Importando o novo componente
-import "../styles/pagesIndex.css";
+import CharacterCard from "@/components/CharacterCard";
+import CharacterSelection from "@/components/CharacterSelection";
+import AnimeFilter from "@/components/AnimeFilter";
+import "@/styles/pagesIndex.css";
 
 interface Character {
   _id: string;
@@ -16,7 +17,7 @@ export default function Home() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [filteredCharacters, setFilteredCharacters] = useState<Character[]>([]);
   const [selectedAnime, setSelectedAnime] = useState<string>("Todos");
-  const [animeList, setAnimeList] = useState<string[]>(["Todos"]); // ✅ Garante que "Todos" sempre aparece
+  const [animeList, setAnimeList] = useState<string[]>(["Todos"]);
 
   useEffect(() => {
     fetch("/api/characters")
@@ -25,9 +26,8 @@ export default function Home() {
         setCharacters(data);
         setFilteredCharacters(data);
 
-        // ✅ Criar lista de animes sem duplicatas
         const uniqueAnimes = Array.from(new Set(data.map((char) => char.anime)));
-        setAnimeList(["Todos", ...uniqueAnimes]); // Adiciona "Todos" no início
+        setAnimeList(["Todos", ...uniqueAnimes]);
       });
   }, []);
 
@@ -45,14 +45,16 @@ export default function Home() {
   return (
     <div className="home-container">
       <h1 className="title">Anime Heroes Allstar Clash</h1>
-      <p className="subtitle">Lista de personagens</p>
-
-      {/* ✅ Passamos os valores corretamente para o AnimeFilter */}
+      
       <AnimeFilter animeList={animeList} selectedAnime={selectedAnime} onSelectAnime={handleAnimeSelect} />
 
       <div className="character-selection-container">
-        <h2 className="section-title">Personagens Selecionados</h2>
+        <h2 className="section-title">Personagens</h2>
         <CharacterCard characters={filteredCharacters} />
+      </div>
+
+      <div className="gif-selection-container">
+        <CharacterSelection characters={filteredCharacters} />
       </div>
     </div>
   );
