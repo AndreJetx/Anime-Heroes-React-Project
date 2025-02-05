@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Header from "@/components/Header";
 import CharacterCard from "@/components/CharacterCard";
 import CharacterSelection from "@/components/CharacterSelection";
-import AnimeFilter from "@/components/AnimeFilter";
 import "@/styles/pagesIndex.css";
 
 interface Character {
@@ -17,7 +17,7 @@ export default function Home() {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [filteredCharacters, setFilteredCharacters] = useState<Character[]>([]);
   const [selectedAnime, setSelectedAnime] = useState<string>("Todos");
-  const [animeList, setAnimeList] = useState<string[]>(["Todos"]);
+  const [animeList, setAnimeList] = useState<{ name: string; logoUrl: string }[]>([]);
 
   useEffect(() => {
     fetch("/api/characters")
@@ -26,8 +26,13 @@ export default function Home() {
         setCharacters(data);
         setFilteredCharacters(data);
 
-        const uniqueAnimes = Array.from(new Set(data.map((char) => char.anime)));
-        setAnimeList(["Todos", ...uniqueAnimes]);
+        const uniqueAnimes = Array.from(new Set(data.map((char) => char.anime)))
+          .map((anime) => ({
+            name: anime,
+            logoUrl: `/images/animes/${anime.toLowerCase().replace(/\s+/g, "-")}.png`,
+          }));
+
+        setAnimeList([{ name: "Todos", logoUrl: "/images/logo.png" }, ...uniqueAnimes]);
       });
   }, []);
 
@@ -43,19 +48,25 @@ export default function Home() {
   };
 
   return (
-    <div className="home-container">
-      <h1 className="title">Anime Heroes Allstar Clash</h1>
-      
-      <AnimeFilter animeList={animeList} selectedAnime={selectedAnime} onSelectAnime={handleAnimeSelect} />
+    <>
+      <Header 
+        animeList={animeList} 
+        selectedAnime={selectedAnime} 
+        onSelectAnime={handleAnimeSelect} 
+      />
 
-      <div className="character-selection-container">
-        <h2 className="section-title">Personagens</h2>
-        <CharacterCard characters={filteredCharacters} />
-      </div>
+      <div className="home-container">
+        <h1 className="title">Anime Heroes Allstar Clash</h1>
 
-      <div className="gif-selection-container">
-        <CharacterSelection characters={filteredCharacters} />
+        <div className="character-selection-container">
+          <h2 className="section-title">Personagens</h2>
+          <CharacterCard characters={filteredCharacters} />
+        </div>
+
+        <div className="gif-selection-container">
+          <CharacterSelection characters={filteredCharacters} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

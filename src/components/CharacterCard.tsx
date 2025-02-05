@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import "../styles/CharacterCard.css";
+import "@/styles/CharacterCard.css";
 
 interface Character {
   _id: string;

@@ -1,0 +1,32 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 20px;
+    color: white;
+  }
+  
+  .logo img {
+    width: 150px;
+  }
+  
+  .nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav ul li {
+    margin: 0 15px;
+  }
+  
+  .nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav ul li a:hover {
+    text-decoration: underline;
+  }
+  

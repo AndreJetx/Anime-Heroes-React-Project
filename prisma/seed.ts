@@ -14,7 +14,7 @@ async function main() {
   await prisma.character.createMany({
     data: [
       {
-        anime: "Dragon Ball Z",
+        anime: "Naruto",
         name: "Android 21",
         power: "Mago De Batalha",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-androide21.png",
