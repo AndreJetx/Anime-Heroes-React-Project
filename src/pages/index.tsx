@@ -18,6 +18,7 @@ export default function Home() {
   const [filteredCharacters, setFilteredCharacters] = useState<Character[]>([]);
   const [selectedAnime, setSelectedAnime] = useState<string>("Todos");
   const [animeList, setAnimeList] = useState<{ name: string; logoUrl: string }[]>([]);
+  const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
 
   useEffect(() => {
     fetch("/api/characters")
@@ -43,8 +44,17 @@ export default function Home() {
     if (selected === "Todos") {
       setFilteredCharacters(characters);
     } else {
-      setFilteredCharacters(characters.filter((char) => char.anime === selected));
+      const filtered = characters.filter((char) => char.anime === selected);
+    setFilteredCharacters(filtered);
+
+    if (filtered.length > 0) {
+      setSelectedCharacter(filtered[0]);
     }
+    }
+  };
+
+  const handleCharacterClick = (character: Character) => {
+    setSelectedCharacter(character);
   };
 
   return (
@@ -56,15 +66,21 @@ export default function Home() {
       />
 
       <div className="home-container">
-        <h1 className="title">Anime Heroes Allstar Clash</h1>
 
         <div className="character-selection-container">
-          <h2 className="section-title">Personagens</h2>
-          <CharacterCard characters={filteredCharacters} />
+          <h2 className="section-title">Lista De Personagens</h2>
+
+          <CharacterCard 
+            characters={filteredCharacters}
+            onCharacterClick={handleCharacterClick}
+          />
+
         </div>
 
         <div className="gif-selection-container">
-          <CharacterSelection characters={filteredCharacters} />
+          <CharacterSelection 
+            characters={[selectedCharacter]}
+          />
         </div>
       </div>
     </>

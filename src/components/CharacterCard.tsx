@@ -7,21 +7,24 @@ interface Character {
   anime: string;
   name: string;
   imageUrl: string;
+  gifUrl: string;
+  power: string;
 }
 
 interface CharacterCardProps {
   characters: Character[];
+  onCharacterClick: (character: Character) => void;
 }
 
-const CharacterCard: React.FC<CharacterCardProps> = ({ characters }) => {
+const CharacterCard: React.FC<CharacterCardProps> = ({ characters, onCharacterClick }) => {
   return (
     <div className="personagens">
       <ul className="lista-de-personagem">
         {characters.length === 0 ? (
-          <p>Nenhum personagem encontrado para este anime.</p> // Mensagem caso nenhum personagem seja filtrado
+          <p>Nenhum personagem encontrado para este anime.</p>
         ) : (
           characters.map((char) => (
-            <li key={char._id} className="character-card">
+            <li key={char._id} className="character-card" onClick={() => onCharacterClick(char)}>
               <Image
                 src={char.imageUrl}
                 alt={char.name}

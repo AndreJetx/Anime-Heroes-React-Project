@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import '@/styles/CharacterSelection.css'
 
 interface Character {
   _id: string;
   name: string;
   gifUrl?: string;
+  power: string;
 }
 
 interface CharacterSelectionProps {
@@ -12,33 +14,31 @@ interface CharacterSelectionProps {
 }
 
 const CharacterSelection: React.FC<CharacterSelectionProps> = ({ characters }) => {
-  // Garante que characters seja um array válido
-  const validCharacters = Array.isArray(characters) ? characters : [];
 
-  // Filtra os personagens que têm gifUrl
-  const charactersWithGif = validCharacters.filter((char) => char.gifUrl);
+  const validCharacter = characters[0];
 
   return (
     <div className="gif-container">
-      <ul className="gif-list">
-        {charactersWithGif.length === 0 ? (
-          <p>Nenhum GIF disponível.</p>
-        ) : (
-          charactersWithGif.map((char) => (
-            <li key={char._id} className="gif-item">
-              <Image
-                src={char.gifUrl!}
-                alt={`GIF de ${char.name}`}
-                className="gif-image"
-                width={100}
-                height={100}
-                unoptimized
-              />
-            </li>
-          ))
-        )}
-      </ul>
+      {validCharacter?.gifUrl ? (
+        <div className="gif-item">
+          <Image
+            src={validCharacter.gifUrl}
+            alt={`GIF de ${validCharacter.name}`}
+            className="gif-image"
+            width={300}
+            height={300}
+            unoptimized
+          />
+          <div className="character-info">
+            <h3>{validCharacter.name}</h3>
+            <p>{validCharacter.power}</p>
+          </div>
+        </div>
+      ) : (
+        <p>Sem GIF disponível para este personagem.</p>
+      )}
     </div>
+
   );
 };
 
