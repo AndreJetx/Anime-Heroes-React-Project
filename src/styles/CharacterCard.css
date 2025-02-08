@@ -1,3 +1,13 @@
+.personagens {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  max-width: calc(4 * 150px + 4 * 16px); 
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+
 .lista-de-personagem {
   display: flex;
   flex-wrap: wrap;

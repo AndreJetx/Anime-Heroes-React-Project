@@ -1,16 +1,24 @@
+.gif-selection-container {
+  width: 500px;
+  height: 100vh;
+
+}
+
 .gif-container {
+  height:100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .gif-item {
+  height:100%;
   text-align: center;
 }
 
 .gif-image {
-  max-width: 500px;
-  max-height: 500px;
+  width: 500px;
+  height: 450px;
   object-fit: contain; 
 }
 
