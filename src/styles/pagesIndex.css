@@ -19,10 +19,9 @@
   }
 
   .home-container {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    min-height: calc(100vh - 100px);
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    gap: 20px;
+    align-items: start;
   }
   

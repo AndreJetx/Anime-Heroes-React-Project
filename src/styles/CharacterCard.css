@@ -4,6 +4,10 @@
   gap: 16px;
   max-width: calc(4 * 150px + 4 * 16px); 
   margin: 0 auto;
+}
+
+.character-selection-container {
+  flex: 1;
   overflow-y: auto;
 }
 
