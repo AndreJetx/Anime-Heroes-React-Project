@@ -39,6 +39,15 @@ async function main() {
       },
 
       {
+        anime: "Black Clover",
+        name: "Asta",
+        power: "Espadachim",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-asta.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-asta.gif",
+      },
+      
+
+      {
         anime: "Dragon Ball Z",
         name: "Bardok",
         power: "Lutador",
@@ -189,6 +198,8 @@ async function main() {
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gogeta.png",
         gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gogeta.gif",
       },
+
+
       
 
 

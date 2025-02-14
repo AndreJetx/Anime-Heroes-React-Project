@@ -23,5 +23,6 @@
     grid-template-columns: 1fr 500px;
     gap: 20px;
     align-items: start;
+    padding-top: 100px;
   }
   
