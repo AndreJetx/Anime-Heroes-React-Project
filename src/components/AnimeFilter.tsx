@@ -20,7 +20,7 @@ const AnimeFilter: React.FC<AnimeFilterProps> = ({ animeList, selectedAnime, onS
     setIsOpen(false);
   };
 
-  const selectedAnimeObj = animeList.find((anime) => anime.name === selectedAnime);
+  const selectedAnimeObj = animeList?.find((anime) => anime.name === selectedAnime);
 
   return (
     <div className="anime-filter">

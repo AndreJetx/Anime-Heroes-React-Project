@@ -1,5 +1,5 @@
 .header-container {
-    max-height: 200px;
+    max-height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,7 +9,7 @@
   }
   
   .logo img {
-    width: 150px;
+    width: 80px;
   }
   
   .nav ul {
