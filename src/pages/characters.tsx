@@ -40,7 +40,7 @@ export default function Home() {
             logoUrl: `/images/animes/${anime.toLowerCase().replace(/\s+/g, "-")}.png`,
           }));
 
-        setAnimeList([{ name: "Todos", logoUrl: "/images/logo.png" }, ...uniqueAnimes]);
+        setAnimeList([{ name: "Todos", logoUrl: "/images/animes/todos.png" }, ...uniqueAnimes]);
       });
   }, []);
 
@@ -84,7 +84,7 @@ export default function Home() {
 
         <div className="gif-selection-container">
           <CharacterSelection 
-            characters={[selectedCharacter]}
+            characters={selectedCharacter ? [selectedCharacter] : []}
           />
         </div>
       </div>

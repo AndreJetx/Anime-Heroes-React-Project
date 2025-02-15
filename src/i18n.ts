@@ -6,9 +6,16 @@ import ptTranslation from "./languages/pt/translation.json";
 
 const isBrowser = typeof window !== "undefined";
 
+const languageDetector = isBrowser ? new LanguageDetector() : {
+  type: "languageDetector" as const,
+  init: () => {},
+  detect: () => "en", // Define "en" como padrão no servidor
+  cacheUserLanguage: () => {},
+};
+
 i18n
+  .use(languageDetector) // Usa o detector adequado conforme o ambiente
   .use(initReactI18next)
-  .use(LanguageDetector) 
   .init({
     resources: {
       en: { translation: enTranslation },

@@ -37,7 +37,12 @@ const AnimeFilter: React.FC<AnimeFilterProps> = ({ animeList, selectedAnime, onS
         <div className="options active">
           {animeList.map((anime) => (
             <div key={anime.name} onClick={() => handleOptionClick(anime.name)}>
-              <Image src={anime.logoUrl} alt={anime.name} width={500} height={300}/>
+              <Image 
+                src={anime.logoUrl}
+                alt={anime.name}
+                width={100}
+                height={100}
+              />
             </div>
           ))}
         </div>

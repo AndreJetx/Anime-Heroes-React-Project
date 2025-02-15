@@ -6,6 +6,10 @@ import { useTranslation } from "react-i18next";
 export default function Home() {
   const { t, i18n } = useTranslation();
 
+  if (!i18n.isInitialized) {
+    return <p>Loading...</p>;
+  }
+
   // Função para mudar o idioma
   const changeLanguage = (lng: "en" | "pt") => {
     i18n.changeLanguage(lng);
@@ -13,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      <Header animeList={[]} selectedAnime="" onSelectAnime={() => {}} />
       <div className="home">
         <section className="home-section">
           <h1>{t("title")}</h1>

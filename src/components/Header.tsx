@@ -14,13 +14,15 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ animeList, selectedAnime, onSelectAnime }) => {
   const router = useRouter();
 
+  const isCharacterPage = router.pathname === "/characters";
+
   return (
     <header className="header-container">
       <div className="logo">
-        <Image src="/images/logo.png" alt="Anime Heroes Allstar Clash" width={500} height={300} />
+        <Image src="/images/logo.png" alt="Anime Heroes Allstar Clash" width={80} height={80} />
       </div>
 
-      {router.pathname === "/characters" && (
+      {isCharacterPage &&  (
         <AnimeFilter 
           animeList={animeList} 
           selectedAnime={selectedAnime} 
