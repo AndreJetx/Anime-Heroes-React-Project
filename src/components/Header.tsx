@@ -2,6 +2,8 @@ import React from "react";
 import { useRouter } from "next/router";
 import AnimeFilter from "./AnimeFilter";
 import "@/styles/header.css";
+import Link from "next/link"
+import Image from "next/image";
 
 interface HeaderProps {
   animeList: { name: string; logoUrl: string }[];
@@ -15,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ animeList, selectedAnime, onSelectAnime
   return (
     <header className="header-container">
       <div className="logo">
-        <img src="/images/logo.png" alt="Anime Heroes Allstar Clash" />
+        <Image src="/images/logo.png" alt="Anime Heroes Allstar Clash" width={500} height={300} />
       </div>
 
       {router.pathname === "/characters" && (
@@ -28,10 +30,10 @@ const Header: React.FC<HeaderProps> = ({ animeList, selectedAnime, onSelectAnime
 
       <nav className="nav">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/characters">Personagens</a></li>
-          <li><a href="/guide">Guia</a></li>
-          <li><a href="/download">Download</a></li>
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/characters">Personagens</Link></li>
+          <li><Link href="/guide">Guia</Link></li>
+          <li><Link href="/download">Download</Link></li>
         </ul>
       </nav>
     </header>
