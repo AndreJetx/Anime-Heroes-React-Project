@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import CharacterCard from "@/components/CharacterCard";
 import CharacterSelection from "@/components/CharacterSelection";
@@ -14,11 +15,17 @@ interface Character {
 }
 
 export default function Home() {
+  const { t } = useTranslation();
   const [characters, setCharacters] = useState<Character[]>([]);
   const [filteredCharacters, setFilteredCharacters] = useState<Character[]>([]);
   const [selectedAnime, setSelectedAnime] = useState<string>("Todos");
   const [animeList, setAnimeList] = useState<{ name: string; logoUrl: string }[]>([]);
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     fetch("/api/characters")
@@ -45,17 +52,19 @@ export default function Home() {
       setFilteredCharacters(characters);
     } else {
       const filtered = characters.filter((char) => char.anime === selected);
-    setFilteredCharacters(filtered);
+      setFilteredCharacters(filtered);
 
-    if (filtered.length > 0) {
-      setSelectedCharacter(filtered[0]);
-    }
+      if (filtered.length > 0) {
+        setSelectedCharacter(filtered[0]);
+      }
     }
   };
 
   const handleCharacterClick = (character: Character) => {
     setSelectedCharacter(character);
   };
+
+  if (!mounted) return <p>{t("loading")}</p>;
 
   return (
     <>
@@ -66,15 +75,11 @@ export default function Home() {
       />
 
       <div className="home-container">
-
         <div className="character-selection-container">
-          <h2 className="section-title">Lista De Personagens</h2>
-
           <CharacterCard 
             characters={filteredCharacters}
             onCharacterClick={handleCharacterClick}
           />
-
         </div>
 
         <div className="gif-selection-container">

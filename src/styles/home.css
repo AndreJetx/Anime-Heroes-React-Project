@@ -1,0 +1,25 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.home-section {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    max-height: 500px;
+    margin: 50px;
+    padding: 50px;
+    max-width: 800px;
+    gap:50px;
+}
+
+.home-section p {
+    text-align: justify;
+    font-size: large;
+}
