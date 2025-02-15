@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import '@/styles/AnimeFilter.css'
+import Image from "next/image";
 
 interface AnimeFilterProps {
   animeList: { name: string; logoUrl: string }[];
@@ -28,7 +29,7 @@ const AnimeFilter: React.FC<AnimeFilterProps> = ({ animeList, selectedAnime, onS
 
       <div className="custom-select" onClick={toggleSelect}>
         {selectedAnimeObj && (
-          <img src={selectedAnimeObj.logoUrl} alt={selectedAnimeObj.name} />
+          <Image src={selectedAnimeObj.logoUrl} alt={selectedAnimeObj.name} width={500} height={300} />
         )}
       </div>
 
@@ -36,7 +37,7 @@ const AnimeFilter: React.FC<AnimeFilterProps> = ({ animeList, selectedAnime, onS
         <div className="options active">
           {animeList.map((anime) => (
             <div key={anime.name} onClick={() => handleOptionClick(anime.name)}>
-              <img src={anime.logoUrl} alt={anime.name}/>
+              <Image src={anime.logoUrl} alt={anime.name} width={500} height={300}/>
             </div>
           ))}
         </div>
