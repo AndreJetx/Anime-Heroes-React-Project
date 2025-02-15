@@ -8,8 +8,7 @@ const isBrowser = typeof window !== "undefined";
 
 i18n
   .use(initReactI18next)
-  .use(isBrowser ? LanguageDetector : { type: "languageDetector", init: () => {}, detect: () => "en", cacheUserLanguage: () => {} }) 
-  //funcionou, mas preciso verificar o pq do problema
+  .use(LanguageDetector) 
   .init({
     resources: {
       en: { translation: enTranslation },
