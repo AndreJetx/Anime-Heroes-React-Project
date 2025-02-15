@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '@/styles/AnimeFilter.css'
+import '@/styles/AnimeFilter.module.css'
 import Image from "next/image";
 
 interface AnimeFilterProps {

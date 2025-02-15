@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "@/components/Header";
-import "@/styles/home.css";
+import "@/styles/home.module.css";
 import { useTranslation } from "react-i18next";
 
 export default function Home() {

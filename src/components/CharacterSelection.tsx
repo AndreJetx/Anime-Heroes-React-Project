@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import '@/styles/CharacterSelection.css'
+import '@/styles/CharacterSelection.module.css'
 
 interface Character {
   _id: string;
