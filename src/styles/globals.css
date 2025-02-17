@@ -28,7 +28,7 @@ html{
   
   body::before{
       content: "";
-      background-image: url(../../public/images/arena.jpg);
+      background-image: url(/images/arena.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
