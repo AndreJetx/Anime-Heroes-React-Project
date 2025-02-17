@@ -9,12 +9,12 @@ const isBrowser = typeof window !== "undefined";
 const languageDetector = isBrowser ? new LanguageDetector() : {
   type: "languageDetector" as const,
   init: () => {},
-  detect: () => "en", // Define "en" como padrão no servidor
+  detect: () => "en",
   cacheUserLanguage: () => {},
 };
 
 i18n
-  .use(languageDetector) // Usa o detector adequado conforme o ambiente
+  .use(languageDetector)
   .use(initReactI18next)
   .init({
     resources: {

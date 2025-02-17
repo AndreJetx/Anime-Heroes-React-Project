@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import CharacterCard from "@/components/CharacterCard";
 import CharacterSelection from "@/components/CharacterSelection";
-import "@/styles/pagesIndex.module.css";
 
 interface Character {
   _id: string;
