@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
+
 
 interface AnimeFilterProps {
   animeList: { name: string; logoUrl: string }[];
@@ -22,9 +24,11 @@ const AnimeFilter: React.FC<AnimeFilterProps> = ({ animeList, selectedAnime, onS
 
   const selectedAnimeObj = animeList?.find((anime) => anime.name === selectedAnime);
 
+  const { t } = useTranslation();
+
   return (
     <div className="anime-filter">
-      <label htmlFor="anime-select">Selecione um Anime:</label>
+      <label htmlFor="anime-select">{t("animeselection")}</label>
 
       <div className="custom-select" onClick={toggleSelect}>
         {selectedAnimeObj && (

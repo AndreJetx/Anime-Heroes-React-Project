@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 interface Character {
   _id: string;
@@ -13,6 +14,8 @@ interface CharacterSelectionProps {
 }
 
 const CharacterSelection: React.FC<CharacterSelectionProps> = ({ characters }) => {
+  
+  const { t } = useTranslation();
 
   const validCharacter = characters[0];
 
@@ -34,7 +37,7 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({ characters }) =
           </div>
         </div>
       ) : (
-        <p>Sem GIF disponível para este personagem.</p>
+        <p>{t("gifalt")}</p>
       )}
     </div>
 

@@ -41,6 +41,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 100px;
+  }
+
+  .style-section div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
 
   .style-section img{
@@ -48,4 +56,9 @@
     width: 100%;
     max-height: 250px;
     height: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .style-section img:hover{
+    transform: scale(1.1);
   }

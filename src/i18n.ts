@@ -9,7 +9,7 @@ const isBrowser = typeof window !== "undefined";
 const languageDetector = isBrowser ? new LanguageDetector() : {
   type: "languageDetector" as const,
   init: () => {},
-  detect: () => "en",
+  detect: () => "pt",
   cacheUserLanguage: () => {},
 };
 

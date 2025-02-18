@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 interface Character {
   _id: string;
@@ -16,11 +17,13 @@ interface CharacterCardProps {
 }
 
 const CharacterCard: React.FC<CharacterCardProps> = ({ characters, onCharacterClick }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="personagens">
       <ul className="lista-de-personagem">
         {characters.length === 0 ? (
-          <p>Nenhum personagem encontrado para este anime.</p>
+          <p>{t("cardcharacteralt")}</p>
         ) : (
           characters.map((char) => (
             <li key={char._id} className="character-card" onClick={() => onCharacterClick(char)}>
