@@ -14,6 +14,9 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ animeList, selectedAnime, onSelectAnime }) => {
 
   const {t, i18n } = useTranslation();
+  
+  const router = useRouter();
+
   if (!i18n.isInitialized) {
       return <p>Loading...</p>;
     }
@@ -23,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ animeList, selectedAnime, onSelectAnime
       i18n.changeLanguage(lng);
     };
 
-  const router = useRouter();
+  
 
   const isCharacterPage = router.pathname === "/characters";
 
