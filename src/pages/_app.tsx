@@ -8,6 +8,8 @@ import "@/styles/header.css";
 import "@/styles/home.css";
 import "@/styles/pagesIndex.css";
 import "@/styles/CharacterSelection.css";
+import "@/styles/slide.css";
+
 
 
 

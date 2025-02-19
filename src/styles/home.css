@@ -4,22 +4,301 @@
     align-items: center;
     justify-content: center;
     padding-top: 100px;
+    gap: 50px;
 }
 
 .home-section {
+    width: 95%;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.92);
     max-height: 500px;
     margin: 50px;
     padding: 50px;
-    max-width: 800px;
     gap:50px;
 }
 
 .home-section p {
+    max-width: 800px;
     text-align: justify;
     font-size: large;
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+.style-section-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.92);
+    width: 95%;
+    gap: 80px;
+  }
+
+  .style-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+  }
+
+  .style-section div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .style-section img{
+    max-width: 250px;
+    width: 100%;
+    max-height: 250px;
+    height: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .style-section img:hover{
+    transform: scale(1.1);
+  }
+
+ /*--------------------------------------------------------------------------------------*/
+
+  .question-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color:rgb(11, 23, 71);
+    margin: 20px;
+    width: 95%;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .question-container h4{
+    font-size: 19px;
+    color: rgba(0, 0, 0, 0.596);
+  }
+
+  .question-container h1{
+    font-size: 40px;
+  }
+
+/*--------------------------------------------------------------------------------------*/
+
+  .feautures-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.92);
+    width: 95%;
+    gap: 20px;
+  }
+
+  .feautures-container h1{
+    margin-bottom: 50px;
+    font-size: 30px;
+  }
+
+  .feautures-container .feautures div{
+    display: flex;
+    gap: 40px;
+  }
+
+  .feautures-container .feautures .feautures-elements{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align:center;
+    max-width: 300px;
+    gap: 15px;
+  }
+
+  svg{
+    fill: white;
+    width: 32px;
+    height: 32px;
+  }
+
+  .feautures-elements .after{
+        width: 120%;
+        height: 2px;
+        background: rgb(76, 122, 199);
+        margin-top: 20px;
+        position: relative;
+  }
+
+  .feautures-elements .after::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: white;
+}
+
+.feautures-elements .feautures-text{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feautures-elements .feautures-text p{
+   font-size: 18px;
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+.download-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.92);
+    width: 95%;
+    gap: 20px;
+  }
+
+.download-container .download{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.download-container .download .linkdownload{
+    text-decoration: none;
+}
+
+.download-container .download button{
+  all: unset;
+  width: 100px;
+  height: 30px;
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-container .download button:hover{
+    transform: scale(1.1);
+    background-color: #68a6ee;
+}
+
+.download-feautures{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.download-feautures .download-ftext{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.download-feautures article{
+    max-width: 600px;
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.download-feautures .articletext {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.svg{
+    width: 32px;
+    height: 32px;
+}
+
+.download-info {
+    margin-top: 100px;
+    display: flex;
+    width: 500px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.download-info hr{
+    border: 1px solid;
+    height: 100px;
+}
+
+.download-info .play{
+    display: flex;
+    gap: 20px; 
+}
+
+.download-info .playtext{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+.faq-container{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.92);
+    padding: 50px;
+}
+
+.faq-container h1{
+    font-size: 40px;
+}
+
+.faq-container p{
+    font-size: 20px;
+}
+
+.faq-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.faq-container .faq{
+    display: flex;
+    gap: 20px;
+}
+
+.faq-container .question{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.faq-container .question p{
+    color: rgb(145, 145, 145);
 }

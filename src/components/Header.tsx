@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ animeList, selectedAnime, onSelectAnime
           <li><Link href="/">{t("navhome")}</Link></li>
           <li><Link href="/characters">{t("navcharacters")}</Link></li>
           <li><Link href="/guide">{t("navguide")}</Link></li>
-          <li><Link href="/download">{t("navdownload")}</Link></li>
+          <li><Link href="/#download">{t("navdownload")}</Link></li>
         </ul>
       </nav>
     </header>

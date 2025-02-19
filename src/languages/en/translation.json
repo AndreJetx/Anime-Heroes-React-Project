@@ -17,7 +17,46 @@
 
     "animeselection":"Select Anime:",
     "gifalt":"no gif available for this character",
-    "cardcharacteralt":"No characters found for this anime."
+    "cardcharacteralt":"No characters found for this anime.",
+
+    "majorquestion":"The major question is",
+    "allstardefeat":"Who will defeat the Allstar?",
+
+    "jointofight":"JOIN TO FIGHT",
+    "retrographics": "RETRO GRAPHICS",
+    "frequentupdates":"FREQUENT UPDATES",
+    "newfeautures": "NEW FEAUTURES",
+
+    "textretro":"Explore this imaginary world through realistic and breathtaking graphics and dive into fantastic emotions.",
+    "textupdates":"With every update, we enhance the experiences of our players and make sure that their adventure runs smoothly.",
+    "textfeauteres":"Make your journey even more enjoyable by incorporating our new features and in-game assets into your unique playstyle.",
+
+    "downloadtext":"Anime Heroes Allstar Clash is available on Windows. Download it to get started your adventures on the Anime Multiverse!",
+    "uniqueExperience":"Unique Experience",
+    "unlocksystem": "Unlock System",
+    "secretstransforms":"Secrets Transforms",
+    "uniqueExperiencetext": "Universe designed for all powers and abilities to be true to original characters.",
+    "unlocksystemtext":"Complete arcade survival with specific characters to unlock more characters and stages.",
+    "secretstransformstext":"Several characters have transformations that only occur if certain conditions are met, even if the conditions are met you still need to count on the chance of it happening or not.",
+
+    "easy":"EASY",
+    "easytext":"to play",
+    "chars":"249",
+    "charstext":"Chars",
+    "coop":"COOP",
+    "cooptext":"4 Players",
+
+    "faqtext":"We know you have questions too.",
+    "question1":"Is the the game free to download?",
+    "answer1":"Yes, it's free to download and play. We offer an optional contribution for anyone who wants to encourage the project to continue.",
+    "question2":"Can I play with the same save on different devices?",
+    "answer2":"Just copy the save folder that is in the game's root folder.",
+    "question3":"Is there a community for the game?",
+    "answer3":"Yes, our official community is on Discord, you can access it using the social media buttons at the bottom of the page.",
+    "question4":"Are the characters your creations?",
+    "answer4":"No, all characters are reprogrammed by me to have improvements and balance with the universe, each character with their credit."
+
+    
 
   }
 
