@@ -15,8 +15,44 @@
 
     "animeselection":"Selecione um Anime:",
     "gifalt":"Nenhum Gif encontrado para esse personagem",
-    "cardcharacteralt":"Nenhum personagem encontrado para este anime."
+    "cardcharacteralt":"Nenhum personagem encontrado para este anime.",
 
+    "majorquestion": "A grande questão é",
+    "allstardefeat": "Quem vai derrotar o Allstar?",
+
+    "jointofight": "JUNTE-SE PARA LUTAR",
+    "retrographics": "GRÁFICOS RETRÔ",
+    "frequentupdates": "ATUALIZAÇÕES FREQUENTES",
+    "newfeautures": "NOVAS FUNCIONALIDADES",
+
+    "textretro": "Explore este mundo imaginário através de gráficos realistas e deslumbrantes e mergulhe em emoções fantásticas.",
+    "textupdates": "Com cada atualização, aprimoramos a experiência dos nossos jogadores e garantimos que a aventura continue de forma suave.",
+    "textfeauteres": "Torne sua jornada ainda mais divertida incorporando nossas novas funcionalidades e recursos dentro do jogo no seu estilo de jogo único.",
+
+    "downloadtext": "Anime Heroes Allstar Clash está disponível para Windows. Faça o download para começar suas aventuras no Anime Multiverse!",
+    "uniqueExperience": "Experiência Única",
+    "unlocksystem": "Sistema de Desbloqueio",
+    "secretstransforms": "Transformações Secretas",
+    "uniqueExperiencetext": "Universo projetado para que todos os poderes e habilidades sejam fiéis aos personagens originais.",
+    "unlocksystemtext": "Complete o modo arcade survival com personagens específicos para desbloquear mais personagens e fases.",
+    "secretstransformstext": "Vários personagens possuem transformações que só ocorrem se certas condições forem atendidas, mesmo que as condições sejam cumpridas, ainda é necessário contar com a chance de acontecer ou não.",
+
+    "easy": "FÁCIL",
+    "easytext": "de jogar",
+    "chars": "249",
+    "charstext": "Personagens",
+    "coop": "COOP",
+    "cooptext": "4 Jogadores",
+
+    "faqtext": "Sabemos que você tem dúvidas também.",
+    "question1": "O jogo é gratuito para baixar?",
+    "answer1": "Sim, é gratuito para baixar e jogar. Oferecemos uma contribuição opcional para quem quiser incentivar o projeto a continuar.",
+    "question2": "Posso jogar com o mesmo save em dispositivos diferentes?",
+    "answer2": "Basta copiar a pasta de saves que está na pasta raiz do jogo.",
+    "question3": "Existe uma comunidade para o jogo?",
+    "answer3": "Sim, nossa comunidade oficial está no Discord, e você pode acessá-la usando os botões de redes sociais na parte inferior da página.",
+    "question4": "Os personagens são criações suas?",
+    "answer4": "Não, todos os personagens foram reprogramados por mim para ter melhorias e balanceamento com o universo, cada personagem com seu devido crédito."
     
   }
   
