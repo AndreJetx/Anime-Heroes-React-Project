@@ -33,7 +33,7 @@ const CharacterSelection: React.FC<CharacterSelectionProps> = ({ characters }) =
           />
           <div className="character-info">
             <h3>{validCharacter.name}</h3>
-            <p>{validCharacter.power}</p>
+            <p>{t(validCharacter.power)}</p>
           </div>
         </div>
       ) : (

@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import Section from "@/components/Section";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
 
       <Section />
 
+      <Footer />
 
     </>
   );

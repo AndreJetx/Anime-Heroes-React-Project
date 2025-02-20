@@ -175,7 +175,7 @@ export default function Section() {
             </div>   
           </section>
 
-          <section className="faq-container">
+          <section id="FAQ" className="faq-container">
             <h1>FAQ</h1>
             <p className="p">{t("faqtext")}</p>
             <div className="faq-grid">

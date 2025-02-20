@@ -50,7 +50,7 @@ async function main() {
       {
         anime: "Dragon Ball Z",
         name: "Bardok",
-        power: "Lutador",
+        power: "stylemartialartist",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-bardok.png",
         gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-bardock.gif",
       },
