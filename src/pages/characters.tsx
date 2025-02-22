@@ -13,7 +13,7 @@ interface Character {
   anime: string;
 }
 
-export default function Home() {
+export default function CharacterPage() {
   const { t } = useTranslation();
   const [characters, setCharacters] = useState<Character[]>([]);
   const [filteredCharacters, setFilteredCharacters] = useState<Character[]>([]);
