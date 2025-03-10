@@ -10,6 +10,7 @@ import "@/styles/pagesIndex.css";
 import "@/styles/CharacterSelection.css";
 import "@/styles/footer.css";
 import "@/styles/slide.css";
+import "@/styles/guide.css";
 
 
 

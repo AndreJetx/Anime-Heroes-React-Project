@@ -16,13 +16,13 @@ export default function CharacterPage() {
             
             <div className="guide-container">   
                 <div className="characters">
-                    <div>
+                    <div className="characters-title">
                         <h1>{t("navcharacters")}</h1>
                         <p>{t("characterguidetext")}</p>
                     </div>
 
                     <div className="character-types">
-                        <div>
+                        <div className="character-types-card">
                             <Image
                             src="/images/common.png"
                             alt="common character"
@@ -32,7 +32,7 @@ export default function CharacterPage() {
                             <h3>{t("commoncharacter")}</h3>
                             <p>{t("commoncharacterdescription")}</p>
                         </div>
-                        <div>
+                        <div className="character-types-card">
                             <Image
                             src="/images/extra.png"
                             alt="common character"
@@ -41,7 +41,7 @@ export default function CharacterPage() {
                             />
                             <h3>{t("extracharacter")}</h3>
                             <p>{t("extracharacterdescription")}</p>
-                        </div><div>
+                        </div><div className="character-types-card">
                             <Image
                             src="/images/elites+.png"
                             alt="common character"
@@ -67,9 +67,9 @@ export default function CharacterPage() {
                 <div>
 
                 </div>
+                <Footer />
             </div>
 
-            <Footer />
         </>
     )
 

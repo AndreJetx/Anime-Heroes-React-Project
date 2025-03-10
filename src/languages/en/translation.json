@@ -54,8 +54,16 @@
     "question3":"Is there a community for the game?",
     "answer3":"Yes, our official community is on Discord, you can access it using the social media buttons at the bottom of the page.",
     "question4":"Are the characters your creations?",
-    "answer4":"No, all characters are reprogrammed by me to have improvements and balance with the universe, each character with their credit."
+    "answer4":"No, all characters are reprogrammed by me to have improvements and balance with the universe, each character with their credit.",
 
+    "characterguidetext":"There are some types of unlockable characters.",
+    "commoncharacter":"Common",
+    "commoncharacterdescription":"These are the main characters in the game that are the majority as they are balanced and allowed in competitive matches. Several are already unlocked.",
+    "extracharacter":"Extra",
+    "extracharacterdescription":"They are characters outside the anime category to implement the experience, they are also allowed in competitive matches.",
+    "elitecharacter":"Elite and S+",
+    "eliteharacterdescription":"Characters stronger than normal, considered bosses, who can play for challenges or entertainment, are not allowed in competitive matches."
+    
     
 
   }
