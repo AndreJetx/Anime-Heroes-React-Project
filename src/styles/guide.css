@@ -56,3 +56,65 @@
     height: auto;
 
 }
+
+.guide-container .unlockable{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.guide-container .unlockable .unlockable-title{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.guide-container .unlockable .unlockable-section{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    padding-top: 80px;
+}
+
+.guide-container .unlockable .unlockable-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+    background-color: rgba(0, 0, 0, 0.92);
+    padding: 25px;
+    height: auto;
+    position: relative;
+}
+
+.unlockable-card h2{
+    padding-top: 35px;
+}
+
+.guide-container .unlockable .unlockable-card img{
+    position: absolute;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    top:-50px;
+}
+
+table {
+    max-width: 300px;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+th, td {
+    border: 1px solid #4c7ac7;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #0e0d0d6b;
+}

@@ -62,10 +62,13 @@
     "extracharacter":"Extra",
     "extracharacterdescription":"They are characters outside the anime category to implement the experience, they are also allowed in competitive matches.",
     "elitecharacter":"Elite and S+",
-    "eliteharacterdescription":"Characters stronger than normal, considered bosses, who can play for challenges or entertainment, are not allowed in competitive matches."
-    
-    
+    "eliteharacterdescription":"Characters stronger than normal, considered bosses, who can play for challenges or entertainment, are not allowed in competitive matches.",
 
+    "unlockablecharacters":"Unlockable Characters",
+    "unlockablecharacterstext":"See how to unlock each character below:",
+    "Unlockable":"Unlockable",
+    "gamemode":"Game Mode",
+    "usedcharacter":"Used Character"
   }
 
   

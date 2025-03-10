@@ -35,7 +35,7 @@ export default function CharacterPage() {
                         <div className="character-types-card">
                             <Image
                             src="/images/extra.png"
-                            alt="common character"
+                            alt="Extra character"
                             width={200}
                             height={200}
                             />
@@ -44,7 +44,7 @@ export default function CharacterPage() {
                         </div><div className="character-types-card">
                             <Image
                             src="/images/elites+.png"
-                            alt="common character"
+                            alt="Elite+ character"
                             width={200}
                             height={200}
                             />
@@ -52,15 +52,100 @@ export default function CharacterPage() {
                             <p>{t("eliteharacterdescription")}</p>
                         </div>
                     </div>
-                    <div>
-                        <div>
+                    <div className="unlockable">
+                        <div className="unlockable-title">
                             <h1>{t("unlockablecharacters")}</h1>
                             <p>{t("unlockablecharacterstext")}</p>
                         </div>
-                        <div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                        <div className="unlockable-section">
+                            <div className="unlockable-card">
+                                <Image
+                                src="/images/bleachsimbol.png"
+                                alt="bleachsimbol"
+                                width={200}
+                                height={200}
+                                />
+                                <h2>BLEACH</h2>
+                                <table>
+                                    <tr>
+                                        <th>{t("Unlockable")}</th>
+                                        <th>{t("gamemode")}</th>
+                                        <th>{t("usedcharacter")}</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Human Ichigo</td>
+                                        <td>Arcade</td>
+                                        <td>Ichigo</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div className="unlockable-card">
+                                <Image
+                                src="/images/esferadbz.png"
+                                alt="bleachsimbol"
+                                width={200}
+                                height={200}
+                                />
+                                <h2>DRAGON BALL SERIES</h2>
+                                <table>
+                                    <tr>
+                                        <th>{t("Unlockable")}</th>
+                                        <th>{t("gamemode")}</th>
+                                        <th>{t("usedcharacter")}</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Bardock</td>
+                                        <td>Arcade</td>
+                                        <td>Goku</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Young Vegeta</td>
+                                        <td>Arcade</td>
+                                        <td>Vegeta</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vegetto</td>
+                                        <td>Survival</td>
+                                        <td>Goku</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gogeta</td>
+                                        <td>Survival</td>
+                                        <td>Vegeta</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mirai Trunks DBZ</td>
+                                        <td>Arcade</td>
+                                        <td>Trunks DBS</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Young Gohan</td>
+                                        <td>Arcade</td>
+                                        <td>Gohan</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div className="unlockable-card">
+                                <Image
+                                src="/images/bandananaruto.png"
+                                alt="bleachsimbol"
+                                width={200}
+                                height={200}
+                                />
+                                <h2>NARUTO</h2>
+                                <table>
+                                    <tr>
+                                        <th>{t("Unlockable")}</th>
+                                        <th>{t("gamemode")}</th>
+                                        <th>{t("usedcharacter")}</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Naruto Hokage</td>
+                                        <td>Arcade</td>
+                                        <td>Naruto</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
