@@ -1,0 +1,70 @@
+{
+    "navhome": "ホーム",
+    "navcharacters": "キャラクター",
+    "navguide": "ガイド",
+    "navdownload": "ダウンロード",
+
+    "titlehome": "アニメヒーローズ",
+    "descriptionhome": "これは、さまざまなアニメの象徴的なキャラクターを集めたマルチバース対戦ゲームです。迫力あるバトル、鮮やかなグラフィック、原作に忠実な必殺技、そしてダイナミックなゲームプレイが特徴です。お気に入りのヒーローや悪役をチームに編成し、壮大な挑戦に挑みましょう。魅力的なストーリーモードや競技戦を通じて、アニメと格闘ゲームのファンにユニークな体験を提供します。",
+    "changeLanguage": "言語を変更",
+    "styledescription": "あなたのプレイスタイルに合ったさまざまな戦士タイプがあります:",
+    "stylemartialartist": "武道家",
+    "styleswordsman": "剣士",
+    "stylemage": "魔法使い",
+    "stylemagicfist": "格闘魔法使い",
+
+    "animeselection": "アニメを選択:",
+    "gifalt": "このキャラクターには利用可能なGIFがありません",
+    "cardcharacteralt": "このアニメにはキャラクターが見つかりませんでした。",
+
+    "majorquestion": "最も重要な問いは",
+    "allstardefeat": "オールスターを倒すのは誰か？",
+
+    "jointofight": "戦いに参加する",
+    "retrographics": "レトログラフィック",
+    "frequentupdates": "頻繁なアップデート",
+    "newfeautures": "新機能",
+
+    "textretro": "リアルで息をのむようなグラフィックで、この想像の世界を探索し、素晴らしい感動を体験してください。",
+    "textupdates": "各アップデートで、プレイヤーの体験を向上させ、スムーズな冒険を保証します。",
+    "textfeauteres": "新機能やゲーム内の要素を取り入れ、あなたのプレイスタイルをより楽しくカスタマイズしましょう。",
+
+    "downloadtext": "Anime Heroes Allstar Clash はWindowsで利用可能です。ダウンロードしてアニメマルチバースの冒険を始めましょう！",
+    "uniqueExperience": "ユニークな体験",
+    "unlocksystem": "アンロックシステム",
+    "secretstransforms": "秘密の変身",
+    "uniqueExperiencetext": "全ての能力やスキルが原作キャラクターに忠実にデザインされたユニバース。",
+    "unlocksystemtext": "特定のキャラクターでアーケードサバイバルモードをクリアして、新しいキャラクターやステージをアンロックしよう。",
+    "secretstransformstext": "特定の条件が満たされた場合のみ変身できるキャラクターがいます。ただし、条件を満たしても変身できるかどうかは運次第です。",
+
+    "easy": "簡単",
+    "easytext": "プレイ",
+    "chars": "249",
+    "charstext": "キャラクター",
+    "coop": "協力プレイ",
+    "cooptext": "4人プレイ",
+
+    "faqtext": "よくある質問",
+    "question1": "ゲームは無料でダウンロードできますか？",
+    "answer1": "はい、無料でダウンロードしてプレイできます。プロジェクトを応援したい方には、任意の寄付も受け付けています。",
+    "question2": "異なるデバイスで同じセーブデータを使用できますか？",
+    "answer2": "ゲームのルートフォルダにあるセーブデータフォルダをコピーするだけで可能です。",
+    "question3": "ゲームのコミュニティはありますか？",
+    "answer3": "はい、公式コミュニティはDiscordにあります。ページ下部のソーシャルメディアボタンからアクセスできます。",
+    "question4": "キャラクターはオリジナルですか？",
+    "answer4": "いいえ、すべてのキャラクターは私がプログラムし直し、バランス調整を施しています。それぞれのキャラクターには適切なクレジットがあります。",
+
+    "characterguidetext": "アンロック可能なキャラクターの種類があります。",
+    "commoncharacter": "一般",
+    "commoncharacterdescription": "ゲームの主要キャラクターであり、バランスが取れていて、競技試合でも使用可能です。多くのキャラクターが最初からアンロックされています。",
+    "extracharacter": "エクストラ",
+    "extracharacterdescription": "アニメカテゴリ以外のキャラクターで、体験を向上させます。競技試合でも使用可能です。",
+    "elitecharacter": "エリート & S+",
+    "eliteharacterdescription": "通常よりも強力なボスキャラクターで、挑戦やエンターテインメント用に使用できますが、競技試合では使用できません。",
+
+    "unlockablecharacters": "アンロック可能なキャラクター",
+    "unlockablecharacterstext": "以下の方法でキャラクターをアンロックできます。",
+    "Unlockable": "アンロック可能",
+    "gamemode": "ゲームモード",
+    "usedcharacter": "使用キャラクター"
+}

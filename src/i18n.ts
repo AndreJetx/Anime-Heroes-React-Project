@@ -4,6 +4,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import enTranslation from "./languages/en/translation.json";
 import ptTranslation from "./languages/pt/translation.json";
 import esTranslation from "./languages/es/translation.json";
+import jpTranslation from "./languages/jp/translation.json";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -22,6 +23,7 @@ i18n
       en: { translation: enTranslation },
       pt: { translation: ptTranslation },
       es: { translation: esTranslation },
+      jp: { translation: jpTranslation },
     },
     lng: "pt",
     fallbackLng: "pt",

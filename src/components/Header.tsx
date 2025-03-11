@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ animeList, selectedAnime, onSelectAnime
     }
   
     // Função para mudar o idioma
-    const changeLanguage = (lng: "en" | "pt" | "es") => {
+    const changeLanguage = (lng: "en" | "pt" | "es" |"jp") => {
       i18n.changeLanguage(lng);
     };
 
@@ -35,24 +35,30 @@ const Header: React.FC<HeaderProps> = ({ animeList, selectedAnime, onSelectAnime
       <div className="logo">
         <Image src="/images/logo.png" alt="Anime Heroes Allstar Clash" width={80} height={80} />
         <div>
-        <button className="buttonlg" onClick={() => changeLanguage("en")}>
-          <Image 
-            src="/images/en.png"
-            alt="English language"
-            width={80} height={80} />           
-        </button>
-        <button className="buttonlg" onClick={() => changeLanguage("pt")}>
-          <Image 
-              src="/images/pt.png"
+          <button className="buttonlg" onClick={() => changeLanguage("pt")}>
+            <Image 
+                src="/images/pt.png"
+                alt="English language"
+                width={80} height={80} /> 
+          </button>
+          <button className="buttonlg" onClick={() => changeLanguage("en")}>
+            <Image 
+              src="/images/en.png"
               alt="English language"
-              width={80} height={80} /> 
-        </button>
-        <button className="buttonlg" onClick={() => changeLanguage("es")}>
-          <Image 
-              src="/images/es.png"
-              alt="English language"
-              width={80} height={80} /> 
-        </button>
+              width={80} height={80} />           
+          </button>
+          <button className="buttonlg" onClick={() => changeLanguage("es")}>
+            <Image 
+                src="/images/es.png"
+                alt="English language"
+                width={80} height={80} /> 
+          </button>
+          <button className="buttonlg" onClick={() => changeLanguage("jp")}>
+            <Image 
+                src="/images/jp.png"
+                alt="English language"
+                width={80} height={80} /> 
+          </button>
         </div>
       </div>
 
