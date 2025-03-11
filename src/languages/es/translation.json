@@ -1,0 +1,70 @@
+{
+    "navhome": "inicio",
+    "navcharacters": "Personajes",
+    "navguide": "Guía",
+    "navdownload": "Descargar",
+
+    "titlehome": "ANIME HEROES",
+    "descriptionhome": "Es un juego de lucha multiverso que reúne a casi 200 personajes icónicos de varios animes en emocionantes batallas. Con gráficos vibrantes, movimientos especiales fieles al original y una jugabilidad dinámica, los jugadores pueden formar equipos con sus héroes y villanos favoritos para enfrentar desafíos épicos. Ya sea en el modo historia envolvente o en combates competitivos, Anime Heroes ofrece una experiencia única para los fans del anime y los juegos de lucha.",
+    "styledescription": "Hay diferentes tipos de luchadores para adaptarse a tu estilo:",
+    "changeLanguage": "Cambiar idioma",
+    "stylemartialartist": "ARTISTA MARCIAL",
+    "styleswordsman": "ESPADACHÍN",
+    "stylemage": "MAGO",
+    "stylemagicfist": "PUÑO MÁGICO",
+
+    "animeselection": "Seleccionar Anime:",
+    "gifalt": "no hay gif disponible para este personaje",
+    "cardcharacteralt": "No se encontraron personajes para este anime.",
+
+    "majorquestion": "La gran pregunta es",
+    "allstardefeat": "¿Quién derrotará al Allstar?",
+
+    "jointofight": "ÚNETE A LA LUCHA",
+    "retrographics": "GRÁFICOS RETRO",
+    "frequentupdates": "ACTUALIZACIONES FRECUENTES",
+    "newfeautures": "NUEVAS CARACTERÍSTICAS",
+
+    "textretro": "Explora este mundo imaginario a través de gráficos realistas e impresionantes y sumérgete en emociones fantásticas.",
+    "textupdates": "Con cada actualización, mejoramos las experiencias de nuestros jugadores y nos aseguramos de que su aventura se desarrolle sin problemas.",
+    "textfeauteres": "Haz que tu viaje sea aún más agradable incorporando nuestras nuevas características y elementos del juego en tu estilo de juego único.",
+
+    "downloadtext": "Anime Heroes Allstar Clash está disponible en Windows. ¡Descárgalo para comenzar tus aventuras en el Anime Multiverso!",
+    "uniqueExperience": "Experiencia Única",
+    "unlocksystem": "Sistema de desbloqueo",
+    "secretstransforms": "Transformaciones secretas",
+    "uniqueExperiencetext": "Universo diseñado para que todos los poderes y habilidades sean fieles a los personajes originales.",
+    "unlocksystemtext": "Completa la supervivencia en el modo arcade con personajes específicos para desbloquear más personajes y escenarios.",
+    "secretstransformstext": "Varios personajes tienen transformaciones que solo ocurren si se cumplen ciertas condiciones. Aun si se cumplen, también necesitas contar con la posibilidad de que suceda o no.",
+
+    "easy": "FÁCIL",
+    "easytext": "de jugar",
+    "chars": "249",
+    "charstext": "Personajes",
+    "coop": "COOPERATIVO",
+    "cooptext": "4 Jugadores",
+
+    "faqtext": "Sabemos que también tienes preguntas.",
+    "question1": "¿El juego es gratuito para descargar?",
+    "answer1": "Sí, es gratuito para descargar y jugar. Ofrecemos una contribución opcional para quienes deseen apoyar el proyecto y su continuidad.",
+    "question2": "¿Puedo jugar con la misma partida guardada en diferentes dispositivos?",
+    "answer2": "Solo copia la carpeta de guardado que se encuentra en la carpeta raíz del juego.",
+    "question3": "¿Existe una comunidad para el juego?",
+    "answer3": "Sí, nuestra comunidad oficial está en Discord. Puedes acceder a ella utilizando los botones de redes sociales en la parte inferior de la página.",
+    "question4": "¿Los personajes son creaciones originales?",
+    "answer4": "No, todos los personajes han sido reprogramados por mí para mejorar y equilibrar el universo, cada personaje con sus respectivos créditos.",
+
+    "characterguidetext": "Existen algunos tipos de personajes desbloqueables.",
+    "commoncharacter": "Común",
+    "commoncharacterdescription": "Estos son los personajes principales del juego y la mayoría de ellos están equilibrados y permitidos en partidas competitivas. Varios ya están desbloqueados.",
+    "extracharacter": "Extra",
+    "extracharacterdescription": "Son personajes fuera de la categoría de anime que mejoran la experiencia. También están permitidos en partidas competitivas.",
+    "elitecharacter": "Élite y S+",
+    "eliteharacterdescription": "Personajes más fuertes de lo normal, considerados jefes. Se pueden usar para desafíos o entretenimiento, pero no están permitidos en partidas competitivas.",
+
+    "unlockablecharacters": "Personajes Desbloqueables",
+    "unlockablecharacterstext": "Mira cómo desbloquear cada personaje a continuación:",
+    "Unlockable": "Desbloqueable",
+    "gamemode": "Modo de Juego",
+    "usedcharacter": "Personaje Utilizado"
+}

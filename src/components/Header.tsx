@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ animeList, selectedAnime, onSelectAnime
     }
   
     // Função para mudar o idioma
-    const changeLanguage = (lng: "en" | "pt") => {
+    const changeLanguage = (lng: "en" | "pt" | "es") => {
       i18n.changeLanguage(lng);
     };
 
@@ -46,7 +46,13 @@ const Header: React.FC<HeaderProps> = ({ animeList, selectedAnime, onSelectAnime
               src="/images/pt.png"
               alt="English language"
               width={80} height={80} /> 
-          </button>
+        </button>
+        <button className="buttonlg" onClick={() => changeLanguage("es")}>
+          <Image 
+              src="/images/es.png"
+              alt="English language"
+              width={80} height={80} /> 
+        </button>
         </div>
       </div>
 

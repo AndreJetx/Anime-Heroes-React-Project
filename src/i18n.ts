@@ -3,6 +3,7 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import enTranslation from "./languages/en/translation.json";
 import ptTranslation from "./languages/pt/translation.json";
+import esTranslation from "./languages/es/translation.json";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -20,6 +21,7 @@ i18n
     resources: {
       en: { translation: enTranslation },
       pt: { translation: ptTranslation },
+      es: { translation: esTranslation },
     },
     lng: "pt",
     fallbackLng: "pt",
