@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ animeList, selectedAnime, onSelectAnime
 
   
 
-  const isCharacterPage = router.pathname === "/characters";
+  const isCharacterPage = router.pathname.startsWith("/characters");
 
   return (
     <header className="header-container">
