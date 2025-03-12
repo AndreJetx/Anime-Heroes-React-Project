@@ -31,7 +31,7 @@ export default function CharacterPage() {
       .then((res) => res.json())
       .then((data: Character[]) => {
         setCharacters(data);
-        setFilteredCharacters(data);
+        setFilteredCharacters([]);
 
         const uniqueAnimes = Array.from(new Set(data.map((char) => char.anime)))
           .map((anime) => ({

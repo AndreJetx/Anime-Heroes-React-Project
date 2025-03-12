@@ -160,14 +160,6 @@ async function main() {
       },
 
       {
-        anime: "Naruto",
-        name: "Gai",
-        power: "stylemartialartist",
-        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gai.png",
-        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gai.gif",
-      },
-
-      {
         anime: "One Punch Man",
         name: "Garou",
         power: "stylemartialartist",
@@ -297,10 +289,10 @@ async function main() {
 
       {
         anime: "Naruto",
-        name: "Jiraya",
+        name: "Jiraiya",
         power: "stylemagicfist",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-jiraya.png",
-        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-jiraya.gif",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-jiraiya.gif",
       },
 
       {
@@ -673,14 +665,6 @@ async function main() {
 
       {
         anime: "Dragon Ball Z",
-        name: "Tapion",
-        power: "styleswordsman",
-        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-tapion.png",
-        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-tapion.gif",
-      },
-
-      {
-        anime: "Dragon Ball Z",
         name: "Tenshinhan",
         power: "stylemagicfist",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-tenshinhan.png",
@@ -732,7 +716,7 @@ async function main() {
         name: "Vegeta Scouter",
         power: "stylemagicfist",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-vegetascouter.png",
-        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-vegetascouter.gif",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-vegetayoung.gif",
       },
 
       {
@@ -765,22 +749,6 @@ async function main() {
         power: "stylemagicfist",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-yancha.png",
         gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-yamcha.gif",
-      },
-
-      {
-        anime: "Dragon Ball Z",
-        name: "Zamassu",
-        power: "stylemagicfist",
-        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-zamassu.png",
-        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-zamassu.gif",
-      },
-
-      {
-        anime: "Dragon Ball Z",
-        name: "Potara Zamassu",
-        power: "stylemagicfist",
-        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-zamassufused.png",
-        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-fusedzamassu.gif",
       },
 
       {
