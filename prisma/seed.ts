@@ -23,6 +23,14 @@ async function main() {
       },
 
       {
+        anime: "CDZ",
+        name: "Aiolia",
+        power: "stylemagicfist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-aiolia.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-aiolia.gif",
+      },
+
+      {
         anime: "Dragon Ball Z",
         name: "Android 21",
         power: "stylemagicfist",
@@ -45,7 +53,30 @@ async function main() {
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-asta.png",
         gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-asta.gif",
       },
+
+      {
+        anime: "Jojo",
+        name: "Avdol",
+        power: "stylemagicfist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-avdol.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-avdol.gif",
+      },
       
+      {
+        anime: "Outros",
+        name: "B2",
+        power: "stylemagicfist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-b2.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-b2.gif",
+      },
+
+      {
+        anime: "Nanatsu",
+        name: "Ban",
+        power: "stylemartialartist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-ban.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-ban.gif",
+      },
 
       {
         anime: "Dragon Ball Z",
@@ -69,6 +100,22 @@ async function main() {
         power: "stylemage",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-byakuya.png",
         gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-byakuya.gif",
+      },
+
+      {
+        anime: "Jojo",
+        name: "Caesar",
+        power: "stylemagicfist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-caesar.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-caesar.gif",
+      },
+
+      {
+        anime: "CDZ",
+        name: "Camus",
+        power: "stylemagicfist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-camus.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-camus.gif",
       },
 
       {
@@ -128,6 +175,38 @@ async function main() {
       },
 
       {
+        anime: "Nanatsu",
+        name: "Diane",
+        power: "stylemartialartist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-diane.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-diane.gif",
+      },
+
+      {
+        anime: "Jojo",
+        name: "Diavolo",
+        power: "stylemartialartist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-diavolo.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-diavolo.gif",
+      },
+
+      {
+        anime: "Jojo",
+        name: "Diego",
+        power: "stylemartialartist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-diego.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-diego.gif",
+      },
+
+      {
+        anime: "Jojo",
+        name: "Dio Brando",
+        power: "stylemartialartist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-dio.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-dio.gif",
+      },
+
+      {
         anime: "One Piece",
         name: "Doflamingo",
         power: "stylemartialartist",
@@ -144,6 +223,14 @@ async function main() {
       },
 
       {
+        anime: "Fariry Tail",
+        name: "Erza",
+        power: "styleswordsman",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-erza.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-erza.gif",
+      },
+
+      {
         anime: "Dragon Ball Z",
         name: "Freeza",
         power: "stylemagicfist",
@@ -157,6 +244,14 @@ async function main() {
         power: "stylemage",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gaara.png",
         gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gaara.gif",
+      },
+
+      {
+        anime: "Fariry Tail",
+        name: "Gajeel",
+        power: "stylemage",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gajeel.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gajeel.gif",
       },
 
       {
@@ -181,6 +276,14 @@ async function main() {
         power: "stylemage",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gildarts.png",
         gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gildarts.gif",
+      },
+
+      {
+        anime: "Jojo",
+        name: "Giorno Giovanna",
+        power: "stylemartialartist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-giorno.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-giorno.gif",
       },
 
       {
@@ -224,6 +327,22 @@ async function main() {
       },
 
       {
+        anime: "Hunter x Hunter",
+        name: "Gon",
+        power: "stylemartialartist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gon.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gon.gif",
+      },
+
+      {
+        anime: "Fairy Tail",
+        name: "Gray",
+        power: "stylemartialartist",
+        imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gray.png",
+        gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-gray.gif",
+      },
+
+      {
         anime: "One Piece",
         name: "Hawkins",
         power: "styleswordsman",
@@ -234,7 +353,7 @@ async function main() {
       {
         anime: "Naruto",
         name: "Hidan",
-        power: "SWORDSMAN",
+        power: "styleswordsman",
         imageUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-hidan.png",
         gifUrl: "https://animeheroes.s3.sa-east-1.amazonaws.com/card-hidan.gif",
       },
