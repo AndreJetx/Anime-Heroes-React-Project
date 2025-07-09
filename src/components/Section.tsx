@@ -104,7 +104,7 @@ export default function Section() {
               <p>{t("downloadtext")}</p>
               <Link className="linkdownload" href="https://ko-fi.com/s/d64358779e" target="_blank">
                 <button className="support-button">
-                  v0.99
+                  v0.99.2
                 </button>
               </Link>
             </div>
