@@ -102,9 +102,9 @@ export default function Section() {
             <div className="download">
               <h1>DOWNLOAD</h1>
               <p>{t("downloadtext")}</p>
-              <Link className="linkdownload" href="https://ko-fi.com/s/d64358779e" target="_blank">
+              <Link className="linkdownload" href="https://ko-fi.com/s/1bce1dd19a" target="_blank">
                 <button className="support-button">
-                  v0.99.2
+                  v0.99.3
                 </button>
               </Link>
             </div>

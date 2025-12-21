@@ -49,6 +49,30 @@ export default function DownloadSlider() {
             height={300}
           />
         </SwiperSlide>
+        <SwiperSlide>
+          <Image 
+            src="/images/imgslide5.png"
+            alt="Fourth slide image"
+            width={500}
+            height={300}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image 
+            src="/images/imgslide6.png"
+            alt="Fourth slide image"
+            width={500}
+            height={300}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image 
+            src="/images/imgslide7.png"
+            alt="Fourth slide image"
+            width={500}
+            height={300}
+          />
+        </SwiperSlide>
       </Swiper>
     </div>
   );
