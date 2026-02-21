@@ -14,17 +14,16 @@
   }
   
   .download-fslide .swiper-pagination-bullet {
-    background-color: rgba(0, 112, 243);
-    
+    background-color: var(--border-light);
   }
   
   .download-fslide .swiper-pagination-bullet-active {
-    background-color: rgba(255, 255, 255);
+    background-color: var(--secondary);
     opacity: 1;
   }
   
   .download-fslide .swiper-button-next,
   .download-fslide .swiper-button-prev {
-    color: rgba(255, 255, 255);
+    color: var(--secondary);
   }
   

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import Link from "next/link";
-import DownloadSlider from '@/components/DownloadSlider';
+import ImageSlider from "@/components/ImageSlider";
+import DownloadButton from "@/components/DownloadButton";
 
 export default function Section() {
   const { t } = useTranslation();
@@ -102,13 +102,12 @@ export default function Section() {
             <div className="download">
               <h1>DOWNLOAD</h1>
               <p>{t("downloadtext")}</p>
-              <Link className="linkdownload" href="https://ko-fi.com/s/1bce1dd19a" target="_blank">
-                <button className="support-button">
-                  v0.99.3
-                </button>
-              </Link>
+              <DownloadButton />
             </div>
             <div className="download-feautures">
+              <div className="download-fslide">
+                <ImageSlider />
+              </div>
               <div className="download-ftext">
                 <article>
                 <div className="svg"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M30.944 11.743h-9.945L16.996 1.737a1.063 1.063 0 00-1.981 0l-4.003 9.996H1.056A1.06 1.06 0 000 12.81c0 .356.183.681.467.874l8.879 5.923-3.952 9.864a1.067 1.067 0 001.585 1.29L16 24.757l9.021 6.004a1.075 1.075 0 001.483-.295c.193-.295.234-.67.102-.996l-3.952-9.864 8.879-5.923c.488-.325.62-.996.295-1.483a1.098 1.098 0 00-.884-.457z"></path>
@@ -137,9 +136,6 @@ export default function Section() {
                   </div>
                 </article>
 
-              </div>
-              <div className="download-fslide">
-                <DownloadSlider />
               </div>
             </div> 
             <div className="download-info">

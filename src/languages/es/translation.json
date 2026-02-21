@@ -1,8 +1,8 @@
 {
     "navhome": "inicio",
-    "navcharacters": "Personajes",
     "navguide": "Guía",
     "navdownload": "Descargar",
+    "navupdates": "Últimas actualizaciones",
 
     "titlehome": "ANIME HEROES",
     "descriptionhome": "Es un juego de lucha multiverso que reúne a casi 200 personajes icónicos de varios animes en emocionantes batallas. Con gráficos vibrantes, movimientos especiales fieles al original y una jugabilidad dinámica, los jugadores pueden formar equipos con sus héroes y villanos favoritos para enfrentar desafíos épicos. Ya sea en el modo historia envolvente o en combates competitivos, Anime Heroes ofrece una experiencia única para los fans del anime y los juegos de lucha.",
@@ -12,10 +12,6 @@
     "styleswordsman": "ESPADACHÍN",
     "stylemage": "MAGO",
     "stylemagicfist": "PUÑO MÁGICO",
-
-    "animeselection": "Seleccionar Anime:",
-    "gifalt": "no hay gif disponible para este personaje",
-    "cardcharacteralt": "No se encontraron personajes para este anime.",
 
     "majorquestion": "La gran pregunta es",
     "allstardefeat": "¿Quién derrotará al Allstar?",

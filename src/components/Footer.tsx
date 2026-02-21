@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Footer() {
 
     const { t } = useTranslation();
+    const [logoError, setLogoError] = useState(false);
 
     return(
         <footer className="footer">
@@ -23,7 +25,6 @@ export default function Footer() {
                         <nav className="navfooter">
                             <ul>
                                 <li><Link href="/">{t("navhome")}</Link></li>
-                                <li><Link href="/characters">{t("navcharacters")}</Link></li>
                                 <li><Link href="/#FAQ">FAQ</Link></li>
                                 <li><Link href="/#download">{t("navdownload")}</Link></li>
                             </ul>
@@ -46,6 +47,35 @@ export default function Footer() {
                 </div>
                 <div className="licence">
                     <p>Anime Heroes Allstar Clash © 2024</p>
+                    <p className="licence-credits">
+                        Uma aplicação desenvolvida por{" "}
+                        <Link
+                            href="https://andrejuan.vercel.app/contact"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="licence-logo-link"
+                            aria-label="Contato - AJ Software"
+                        >
+                            {!logoError ? (
+                                <Image
+                                    src="/images/logoAJsoftware.png"
+                                    alt="AJ Software"
+                                    width={250}
+                                    height={70}
+                                    className="licence-logo"
+                                    onError={() => setLogoError(true)}
+                                />
+                            ) : (
+                                <span className="licence-logo-text">AJ Software</span>
+                            )}
+                            <span className="licence-contact">Entre em contato</span>
+                            <svg className="licence-external-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                        </Link>
+                    </p>
                 </div>
             </div>    
         </footer>

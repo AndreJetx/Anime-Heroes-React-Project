@@ -1,9 +1,9 @@
 
 {
     "navhome":"home",
-    "navcharacters":"Characters",
     "navguide":"Guide",
     "navdownload":"Download",
+    "navupdates":"Latest updates",
 
   
     "titlehome": "ANIME HEROES",
@@ -14,10 +14,6 @@
     "styleswordsman":"SWORDSMAN",
     "stylemage":"MAGE",
     "stylemagicfist":"MAGIC FIST",
-
-    "animeselection":"Select Anime:",
-    "gifalt":"no gif available for this character",
-    "cardcharacteralt":"No characters found for this anime.",
 
     "majorquestion":"The major question is",
     "allstardefeat":"Who will defeat the Allstar?",
