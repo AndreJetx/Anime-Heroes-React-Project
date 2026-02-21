@@ -123,7 +123,6 @@ export default function PainelDashboardPage() {
             {carousel.map((s) => (
               <li key={s.id}>
                 <img src={s.imageUrl} alt="" width={80} height={50} style={{ objectFit: "cover" }} />
-                <span>{s.imageUrl.slice(0, 50)}…</span>
                 <button
                   type="button"
                   onClick={async () => {
