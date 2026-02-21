@@ -8,7 +8,7 @@ export default function Section() {
   return(
     <div className="home">
           <section className="home-section">
-            <h1>{t("titlehome")}</h1>
+            <h1 className="home-section-title">{t("titlehome")}</h1>
             <p>{t("descriptionhome")}</p>
           </section>
           <section className="style-section-container">

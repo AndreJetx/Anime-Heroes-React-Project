@@ -40,7 +40,14 @@ const Header = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const stored = typeof window !== "undefined" && localStorage.getItem("sidebar-collapsed") === "1";
+    let stored = false;
+    try {
+      if (typeof window !== "undefined") {
+        stored = localStorage.getItem("sidebar-collapsed") === "1";
+      }
+    } catch {
+      /* localStorage bloqueado (iframe, privado, etc.) */
+    }
     setSidebarCollapsed(stored);
   }, []);
 

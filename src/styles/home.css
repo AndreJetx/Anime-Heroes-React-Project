@@ -22,12 +22,38 @@
   gap: 2rem;
   text-align: center;
   min-height: 300px;
-  box-shadow: 0 4px 24px var(--shadow-primary);
+  box-shadow: 0 4px 24px var(--shadow-primary), 0 0 50px var(--shadow-celeste);
 }
 
 .home-section h1 {
-  color: var(--secondary);
   font-weight: 700;
+}
+
+/* Brilho azul celeste em loop no título ANIME HEROES */
+.home-section-title {
+  background: linear-gradient(
+    90deg,
+    var(--secondary) 0%,
+    #6eb5d0 25%,
+    #87ceeb 50%,
+    #6eb5d0 75%,
+    var(--secondary) 100%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: title-shine 6s linear infinite;
+}
+
+@keyframes title-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .home-section p {
@@ -45,6 +71,7 @@
   border: 1px solid var(--border-color);
   border-radius: 1.5rem;
   padding: 3rem 2rem;
+  box-shadow: 0 0 50px var(--shadow-celeste);
 }
 
 .style-section-container h2 {
@@ -107,6 +134,7 @@
   padding: 3rem 2rem;
   text-align: center;
   min-height: 250px;
+  box-shadow: 0 0 50px var(--shadow-celeste);
 }
 
 .question-container h4 {
@@ -134,6 +162,7 @@
   border: 1px solid var(--border-color);
   border-radius: 1.5rem;
   padding: 3rem 2rem;
+  box-shadow: 0 0 50px var(--shadow-celeste);
 }
 
 .feautures-container h1 {
@@ -243,6 +272,7 @@
   border: 1px solid var(--border-color);
   border-radius: 1.5rem;
   padding: 3rem 2rem;
+  box-shadow: 0 0 50px var(--shadow-celeste);
 }
 
 .download {
@@ -515,6 +545,7 @@
   border: 1px solid var(--border-color);
   border-radius: 1.5rem;
   padding: 3rem 2rem;
+  box-shadow: 0 0 50px var(--shadow-celeste);
 }
 
 .faq-container h1 {

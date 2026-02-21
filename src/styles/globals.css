@@ -7,7 +7,7 @@
   --primary-light: #1a365d;
   --secondary: #ffffff;
   --dark-bg: #0a1628;
-  --card-bg: rgba(15, 40, 71, 0.85);
+  --card-bg: rgba(15, 40, 71, 0.70);
   --card-bg-solid: #0f2847;
   --border-color: rgba(255, 255, 255, 0.12);
   --border-light: rgba(255, 255, 255, 0.2);
@@ -17,6 +17,7 @@
   --hover-bg: rgba(255, 255, 255, 0.06);
   --hover-border: rgba(255, 255, 255, 0.25);
   --shadow-primary: rgba(10, 22, 40, 0.5);
+  --shadow-celeste: rgba(135, 206, 235, 0.12);
 }
 
 html {
@@ -41,11 +42,28 @@ body {
 body::before {
   content: '';
   position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/animebackground.webp');
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  transform: scale(1.08);
+  z-index: -2;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(26, 54, 93, 0.6) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(15, 40, 71, 0.5) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 50% at 20% 20%, rgba(26, 54, 93, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(15, 40, 71, 0.4) 0%, transparent 50%),
+    linear-gradient(135deg, rgba(10, 22, 40, 0.7) 0%, rgba(10, 22, 40, 0.85) 100%);
   z-index: -1;
   pointer-events: none;
 }
