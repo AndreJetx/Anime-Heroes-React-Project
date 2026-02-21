@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
 
 type Settings = { downloadLink: string; downloadVersion: string };
 
@@ -10,7 +9,6 @@ const DEFAULT_LINK = "https://ko-fi.com/s/d64358779e";
 const DEFAULT_VERSION = "v0.99.2";
 
 export default function DownloadButton() {
-  const { t } = useTranslation();
   const [settings, setSettings] = useState<Settings | null>(null);
 
   useEffect(() => {

@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   let supabase;
   try {
     supabase = createSupabaseServer();
-  } catch (e) {
+  } catch {
     return res.status(500).json({ message: "Upload não configurado. Defina SUPABASE_SERVICE_ROLE_KEY no .env" });
   }
   try {
