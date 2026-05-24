@@ -2,9 +2,6 @@ import type { AppProps } from "next/app";
 import { Play } from "next/font/google";
 import "../i18n";
 import "@/styles/globals.css";
-import "@/styles/header.css";
-import "@/styles/footer.css";
-import "@/styles/guide.css";
 import Layout from "@/components/Layout";
 
 const play = Play({
