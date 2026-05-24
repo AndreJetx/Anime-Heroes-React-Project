@@ -3,13 +3,16 @@
 import { AnimatedBackground } from "@/components/landing/animated-background";
 import { SideMenu } from "@/components/landing/side-menu";
 import { LandingSidebarProvider, useLandingSidebar } from "@/contexts/landing-sidebar";
+import { SiteUpdatesProvider } from "@/contexts/site-updates";
 import { cn } from "@/lib/utils";
+import type { SiteUpdateItem } from "@/lib/site-updates-shared";
 import type { ReactNode } from "react";
 
 type LandingAppShellProps = {
   children: ReactNode;
   /** Fundo animado (home e painel novo layout) */
   showAnimatedBackground?: boolean;
+  initialSiteUpdates?: SiteUpdateItem[];
 };
 
 function LandingAppShellInner({
@@ -42,12 +45,15 @@ function LandingAppShellInner({
 export function LandingAppShell({
   children,
   showAnimatedBackground = true,
+  initialSiteUpdates,
 }: LandingAppShellProps) {
   return (
-    <LandingSidebarProvider>
-      <LandingAppShellInner showAnimatedBackground={showAnimatedBackground}>
-        {children}
-      </LandingAppShellInner>
-    </LandingSidebarProvider>
+    <SiteUpdatesProvider initialUpdates={initialSiteUpdates}>
+      <LandingSidebarProvider>
+        <LandingAppShellInner showAnimatedBackground={showAnimatedBackground}>
+          {children}
+        </LandingAppShellInner>
+      </LandingSidebarProvider>
+    </SiteUpdatesProvider>
   );
 }

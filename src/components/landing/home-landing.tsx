@@ -8,10 +8,15 @@ import { DownloadSection } from "@/components/landing/download-section";
 import { CommunitySection } from "@/components/landing/community-section";
 import { FaqSection } from "@/components/landing/faq-section";
 import { LandingFooter } from "@/components/landing/landing-footer";
+import type { SiteUpdateItem } from "@/lib/site-updates-shared";
 
-export function HomeLanding() {
+type HomeLandingProps = {
+  initialSiteUpdates?: SiteUpdateItem[];
+};
+
+export function HomeLanding({ initialSiteUpdates }: HomeLandingProps) {
   return (
-    <LandingAppShell showAnimatedBackground>
+    <LandingAppShell showAnimatedBackground initialSiteUpdates={initialSiteUpdates}>
       <div className="flex flex-col gap-6 md:gap-28 lg:gap-36">
         <HeroSection />
         <CharactersSection />

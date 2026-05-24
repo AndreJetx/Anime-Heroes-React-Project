@@ -2,92 +2,91 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { X, Calendar, ArrowRight } from "lucide-react";
+import { X, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useSiteUpdates } from "@/contexts/site-updates";
 
 export interface NewsModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-const newsItems = [
-  {
-    id: 1,
-    title: "Novo Lutador Anunciado: Shadow Blade",
-    description:
-      "Prepare-se para a chegada do misterioso Shadow Blade, o mestre das sombras que vai revolucionar o meta do jogo.",
-    date: "15 Mar 2026",
-    tag: "PERSONAGEM",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
-  },
-  {
-    id: 2,
-    title: "Temporada 3: Rise of Champions",
-    description:
-      "A nova temporada chegou com novos mapas, modos de jogo e recompensas exclusivas para os melhores lutadores.",
-    date: "10 Mar 2026",
-    tag: "TEMPORADA",
-    image: "https://images.unsplash.com/photo-1552820728-8b83bb6b2b0e?w=400&h=300&fit=crop",
-  },
-  {
-    id: 3,
-    title: "Torneio Mundial 2026",
-    description:
-      "Inscrições abertas para o maior torneio de ANIME HEROES. Prêmio total de $500.000 para os campeões.",
-    date: "05 Mar 2026",
-    tag: "ESPORTS",
-    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=300&fit=crop",
-  },
-  {
-    id: 4,
-    title: "Atualização 2.5 - Balanceamento",
-    description:
-      "Ajustes importantes em diversos personagens e correções de bugs reportados pela comunidade.",
-    date: "01 Mar 2026",
-    tag: "UPDATE",
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop",
-  },
-];
+function formatUpdateDate(value: string): string {
+  try {
+    return new Date(value).toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+  } catch {
+    return "";
+  }
+}
 
 export function NewsModal({ isOpen, onClose }: NewsModalProps) {
   const [mounted, setMounted] = useState(false);
+  const { updates, loading, error, refresh } = useSiteUpdates();
 
   useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    void refresh();
+  }, [isOpen, refresh]);
 
   useEffect(() => {
     if (!isOpen) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
+    document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
   }, [isOpen, onClose]);
 
   if (!mounted || !isOpen) return null;
 
   return createPortal(
-    <>
+    <div className="landing-root landing-news-modal">
       <div
-        className="fixed inset-0 z-[100] bg-background/80 backdrop-blur-md"
+        className="fixed inset-0 z-[100] bg-[#050810]/75 backdrop-blur-md"
         onClick={onClose}
         role="presentation"
       />
 
-      <aside className="fixed right-0 top-0 z-[100] h-full w-full max-w-lg overflow-y-auto border-l border-border bg-card/95 backdrop-blur-xl shadow-2xl">
-        <div className="sticky top-0 z-10 border-b border-border bg-card/95 p-6 backdrop-blur-xl">
-          <div className="flex items-center justify-between">
+      <aside
+        className={cn(
+          "fixed right-0 top-0 z-[101] h-full w-full max-w-lg overflow-y-auto overscroll-contain",
+          "border-l border-white/10 bg-[#070b14] shadow-2xl"
+        )}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Novidades"
+      >
+        <header
+          className={cn(
+            "sticky top-0 z-20 border-b border-white/10 px-6 py-5",
+            "bg-[#070b14]/50 shadow-[0_8px_32px_rgba(0,0,0,0.5)]",
+            "backdrop-blur-2xl backdrop-saturate-150",
+            "[@supports(backdrop-filter:blur(0))]:bg-[#070b14]/45"
+          )}
+        >
+          <div className="flex items-center justify-between gap-4">
             <div>
-              <h2 className="font-[var(--font-display)] text-3xl font-bold tracking-wider text-foreground">
+              <h2 className="font-[var(--font-display)] text-3xl font-bold tracking-wider text-white">
                 NOVIDADES
               </h2>
-              <p className="text-sm text-muted-foreground">Últimas atualizações do jogo</p>
+              <p className="text-sm text-zinc-400">Últimas atualizações do jogo</p>
             </div>
             <button
               type="button"
               onClick={onClose}
               className={cn(
-                "rounded-lg p-2",
-                "bg-secondary text-muted-foreground hover:bg-primary/20 hover:text-primary",
+                "shrink-0 rounded-lg p-2",
+                "bg-white/10 text-zinc-300 hover:bg-blue-500/20 hover:text-white",
                 "transition-all duration-300 hover:rotate-90"
               )}
               aria-label="Fechar"
@@ -95,63 +94,46 @@ export function NewsModal({ isOpen, onClose }: NewsModalProps) {
               <X className="h-6 w-6" />
             </button>
           </div>
-        </div>
+        </header>
 
         <div className="space-y-4 p-6">
-          {newsItems.map((news, index) => (
-            <article
-              key={news.id}
-              className={cn(
-                "group cursor-pointer overflow-hidden rounded-xl",
-                "border border-border bg-secondary/50",
-                "transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-secondary"
-              )}
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="relative h-40 overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={news.image}
-                  alt={news.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
-                <span className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
-                  {news.tag}
-                </span>
-              </div>
-
-              <div className="p-4">
-                <div className="mb-2 flex items-center gap-2 text-xs text-muted-foreground">
-                  <Calendar className="h-3 w-3" />
-                  <span>{news.date}</span>
-                </div>
-                <h3 className="mb-2 font-bold text-foreground transition-colors group-hover:text-primary">
-                  {news.title}
-                </h3>
-                <p className="line-clamp-2 text-sm text-muted-foreground">{news.description}</p>
-                <div className="mt-3 flex translate-x-0 items-center gap-1 text-sm font-medium text-primary opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">
-                  <span>Ler mais</span>
-                  <ArrowRight className="h-4 w-4" />
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="p-6 pt-0">
-          <button
-            type="button"
-            className={cn(
-              "w-full rounded-lg border border-border py-3",
-              "text-muted-foreground transition-all duration-300 hover:border-primary hover:text-primary"
+            {loading && updates.length === 0 ? (
+              <p className="py-8 text-center text-sm text-zinc-400">Carregando…</p>
+            ) : error && updates.length === 0 ? (
+              <p className="py-8 text-center text-sm text-red-400">{error}</p>
+            ) : updates.length === 0 ? (
+              <p className="py-8 text-center text-sm text-zinc-400">
+                Nenhuma atualização no momento.
+              </p>
+            ) : (
+              updates.map((news, index) => (
+                <article
+                  key={news.id}
+                  className={cn(
+                    "overflow-hidden rounded-xl",
+                    "border border-white/10 bg-[#0c1220]/80",
+                    "transition-all duration-300"
+                  )}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="p-5">
+                    <div className="mb-2 flex items-center gap-2 text-xs text-zinc-500">
+                      <Calendar className="h-3 w-3 shrink-0" />
+                      <span>{formatUpdateDate(news.createdAt)}</span>
+                    </div>
+                    <h3 className="mb-2 text-lg font-bold text-white">{news.title}</h3>
+                    {news.content ? (
+                      <p className="whitespace-pre-wrap text-sm leading-relaxed text-zinc-400">
+                        {news.content}
+                      </p>
+                    ) : null}
+                  </div>
+                </article>
+              ))
             )}
-          >
-            Ver todas as novidades
-          </button>
         </div>
       </aside>
-    </>,
+    </div>,
     document.body
   );
 }

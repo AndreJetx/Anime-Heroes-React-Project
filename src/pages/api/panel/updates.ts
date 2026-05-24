@@ -1,8 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "@/lib/db";
 import { siteUpdate } from "@/db/schema";
-import { desc, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { isPanelAuthenticated } from "@/lib/panel-auth";
+import { readSiteUpdates, serializeSiteUpdate } from "@/lib/site-updates-server";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!isPanelAuthenticated(req)) {
@@ -10,11 +11,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
   if (req.method === "GET") {
     try {
-      const rows = await db
-        .select()
-        .from(siteUpdate)
-        .orderBy(desc(siteUpdate.sortOrder), desc(siteUpdate.createdAt));
-      return res.status(200).json(rows);
+      const updates = await readSiteUpdates();
+      return res.status(200).json(updates);
     } catch (error) {
       const msg = error instanceof Error ? error.message : "Erro";
       return res.status(500).json({ message: msg });
@@ -30,12 +28,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         .select({ max: siteUpdate.sortOrder })
         .from(siteUpdate)
         .then((r) => r[0]?.max ?? 0);
-      await db.insert(siteUpdate).values({
-        title: title.trim(),
-        content: typeof content === "string" ? content.trim() : "",
-        sortOrder: typeof sortOrder === "number" ? sortOrder : maxOrder + 1,
-      });
-      return res.status(201).json({ success: true });
+      const [inserted] = await db
+        .insert(siteUpdate)
+        .values({
+          title: title.trim(),
+          content: typeof content === "string" ? content.trim() : "",
+          sortOrder: typeof sortOrder === "number" ? sortOrder : maxOrder + 1,
+        })
+        .returning();
+      return res.status(201).json({ success: true, item: inserted ? serializeSiteUpdate(inserted) : null });
     } catch (error) {
       const msg = error instanceof Error ? error.message : "Erro ao adicionar";
       return res.status(500).json({ message: msg });

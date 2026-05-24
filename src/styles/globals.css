@@ -112,6 +112,16 @@
   }
 }
 
+/* Modal de novidades (portal em document.body): tokens do tema landing */
+.landing-news-modal {
+  --background: oklch(0.12 0.01 260);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.15 0.015 260);
+  --muted-foreground: oklch(0.65 0 0);
+  --border: oklch(0.3 0.03 260);
+  color: var(--foreground);
+}
+
 /* Menu lateral: espaçamento ícone ↔ borda (garantido fora do reset universal) */
 .landing-side-menu [data-menu-accent] {
   flex-shrink: 0;
