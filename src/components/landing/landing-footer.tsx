@@ -1,6 +1,6 @@
 "use client";
 
-import { Twitter, Youtube, Twitch, MessageSquare, Heart } from "lucide-react";
+import { Twitter, Youtube, Twitch, MessageSquare, Heart, Shield, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +12,20 @@ const socialIcons = [
   { icon: Twitch, href: "#" },
   { icon: MessageSquare, href: "#" },
 ];
+
+const socialIconClass = cn(
+  "rounded-lg p-2 text-muted-foreground transition-all duration-300",
+  "bg-secondary/50 hover:bg-primary/20 hover:text-primary"
+);
+
+function ShieldLockIcon({ className }: { className?: string }) {
+  return (
+    <span className={cn("relative inline-flex h-5 w-5 items-center justify-center", className)}>
+      <Shield className="h-5 w-5" strokeWidth={1.75} />
+      <Lock className="absolute h-2.5 w-2.5" strokeWidth={2.25} />
+    </span>
+  );
+}
 
 export function LandingFooter() {
   const { t } = useTranslation();
@@ -33,7 +47,6 @@ export function LandingFooter() {
         { label: t("navhome"), href: "/" },
         { label: t("navguide"), href: "/guide" },
         { label: t("navdownload"), href: "#download" },
-        { label: t("navpainel"), href: "/painel" },
       ],
     },
     {
@@ -71,17 +84,18 @@ export function LandingFooter() {
             <p className="mb-6 text-sm text-muted-foreground">{t("footerTagline")}</p>
             <div className="flex justify-center gap-3 md:justify-start">
               {socialIcons.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className={cn(
-                    "rounded-lg p-2 text-muted-foreground transition-all duration-300",
-                    "bg-secondary/50 hover:bg-primary/20 hover:text-primary"
-                  )}
-                >
+                <a key={index} href={social.href} className={socialIconClass}>
                   <social.icon className="h-5 w-5" />
                 </a>
               ))}
+              <Link
+                href="/painel"
+                className={socialIconClass}
+                aria-label={t("navpainel")}
+                title={t("navpainel")}
+              >
+                <ShieldLockIcon />
+              </Link>
             </div>
           </div>
 

@@ -268,6 +268,35 @@ button {
   color: var(--muted-foreground);
   border-color: var(--border);
 }
+.painel-in-shell .painel-file-btn,
+.painel-in-shell .painel-btn.primary,
+.painel-in-shell .painel-submit {
+  background: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  border: 1px solid transparent !important;
+}
+.painel-in-shell .painel-file-label:hover .painel-file-btn {
+  filter: brightness(1.12);
+}
+.painel-in-shell .painel-file-label input:disabled + .painel-file-btn,
+.painel-in-shell .painel-btn.primary:disabled,
+.painel-in-shell .painel-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.painel-in-shell .painel-btn:not(.primary) {
+  background: var(--muted) !important;
+  color: var(--foreground) !important;
+  border: 1px solid var(--border) !important;
+}
+.painel-in-shell .painel-danger {
+  color: var(--muted-foreground) !important;
+  border-color: var(--border) !important;
+}
+.painel-in-shell .painel-danger:hover {
+  color: #f87171 !important;
+  border-color: #f87171 !important;
+}
 
 /* ===== Painel ===== */
 .painel-page input[type="text"],

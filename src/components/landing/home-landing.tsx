@@ -9,18 +9,20 @@ import { CommunitySection } from "@/components/landing/community-section";
 import { FaqSection } from "@/components/landing/faq-section";
 import { LandingFooter } from "@/components/landing/landing-footer";
 import type { SiteUpdateItem } from "@/lib/site-updates-shared";
+import type { LandingGameModeItem } from "@/lib/game-modes-shared";
 
 type HomeLandingProps = {
   initialSiteUpdates?: SiteUpdateItem[];
+  initialGameModes?: LandingGameModeItem[];
 };
 
-export function HomeLanding({ initialSiteUpdates }: HomeLandingProps) {
+export function HomeLanding({ initialSiteUpdates, initialGameModes }: HomeLandingProps) {
   return (
     <LandingAppShell showAnimatedBackground initialSiteUpdates={initialSiteUpdates}>
       <div className="flex flex-col gap-6 md:gap-28 lg:gap-36">
         <HeroSection />
         <CharactersSection />
-        <GameModesSection />
+        <GameModesSection modes={initialGameModes} />
         <DownloadSection />
         <CommunitySection />
         <FaqSection />

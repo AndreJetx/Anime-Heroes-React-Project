@@ -208,12 +208,24 @@ export default function PainelCarouselPage() {
         .painel-grid-pending .painel-grid-item { outline: 2px dashed var(--border-color); }
         .painel-remove-pending { position: absolute; top: 4px; right: 4px; width: 24px; height: 24px; padding: 0; border: none; border-radius: 50%; background: rgba(0,0,0,0.7); color: #fff; font-size: 1.2rem; line-height: 1; cursor: pointer; }
         .painel-file-label { display: inline-block; cursor: pointer; }
-        .painel-file-btn { display: inline-block; padding: 0.5rem 1rem; background: var(--secondary); color: var(--primary-dark); border-radius: 0.5rem; font-weight: 600; }
+        .painel-file-btn {
+          display: inline-block;
+          padding: 0.55rem 1.15rem;
+          background: #3b82f6;
+          color: #fff;
+          border-radius: 0.5rem;
+          font-weight: 600;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+        }
         .painel-file-label input { position: absolute; width: 0; height: 0; opacity: 0; }
         .painel-pending-label { margin: 1rem 0 0.5rem; font-size: 0.9rem; color: var(--text-secondary); }
         .painel-actions { margin-top: 1rem; display: flex; gap: 0.75rem; }
         .painel-btn { padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-primary); }
-        .painel-btn.primary { background: var(--secondary); color: var(--primary-dark); border-color: var(--secondary); }
+        .painel-btn.primary {
+          background: #3b82f6;
+          color: #fff;
+          border-color: #3b82f6;
+        }
         .painel-btn:disabled { opacity: 0.7; cursor: not-allowed; }
       `}</style>
     </>

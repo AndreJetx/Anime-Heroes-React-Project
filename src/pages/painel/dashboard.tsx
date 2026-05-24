@@ -194,6 +194,14 @@ export default function PainelDashboardPage() {
         </section>
 
         <section className="painel-section">
+          <h2>Modos de jogo</h2>
+          <p className="painel-hint">
+            Títulos, descrições e etiquetas dos cards na seção &quot;Modos de Jogo&quot; da página inicial.
+          </p>
+          <Link href="/painel/game-modes">Gerenciar modos de jogo →</Link>
+        </section>
+
+        <section className="painel-section">
           <h2>Últimas atualizações</h2>
           <p className="painel-hint">Alterações exibidas no modal &quot;Últimas atualizações&quot; do menu do site.</p>
           <Link href="/painel/updates">Gerenciar atualizações →</Link>

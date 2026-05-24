@@ -1,4 +1,4 @@
-import { pgTable, uuid, text, integer, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, uuid, text, integer, timestamp, boolean } from "drizzle-orm/pg-core";
 
 export const siteSettings = pgTable("site_settings", {
   id: uuid("id").primaryKey().defaultRandom(),
@@ -33,8 +33,20 @@ export const siteUpdate = pgTable("site_update", {
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
 });
 
+export const landingGameMode = pgTable("landing_game_mode", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  title: text("title").notNull(),
+  description: text("description").notNull().default(""),
+  playersLabel: text("players_label").notNull().default(""),
+  icon: text("icon").notNull().default("swords"),
+  isHighlight: boolean("is_highlight").notNull().default(false),
+  sortOrder: integer("sort_order").notNull().default(0),
+});
+
 export type SiteSettings = typeof siteSettings.$inferSelect;
 export type CarouselSlide = typeof carouselSlide.$inferSelect;
 export type UnlockableCharacter = typeof unlockableCharacter.$inferSelect;
 export type SiteUpdate = typeof siteUpdate.$inferSelect;
 export type NewSiteUpdate = typeof siteUpdate.$inferInsert;
+export type LandingGameMode = typeof landingGameMode.$inferSelect;
+export type NewLandingGameMode = typeof landingGameMode.$inferInsert;

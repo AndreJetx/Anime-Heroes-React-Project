@@ -12,7 +12,6 @@ import {
   Download,
   Newspaper,
   Trophy,
-  LayoutDashboard,
   Languages,
   MoreVertical,
   X,
@@ -436,7 +435,6 @@ export function SideMenu() {
 
   const activeKey = useMemo(() => {
     const path = router.pathname;
-    if (path.startsWith("/painel")) return "painel";
     if (path === "/") return homeSectionHash;
     return null;
   }, [router.pathname, homeSectionHash]);
@@ -449,7 +447,6 @@ export function SideMenu() {
       { key: "modes", icon: Trophy, label: t("navmodes"), href: h("modes") },
       { key: "community", icon: Users, label: t("navcommunity"), href: h("community") },
       { key: "download", icon: Download, label: t("navdownload"), href: h("download") },
-      { key: "painel", icon: LayoutDashboard, label: t("navpainel"), href: "/painel" },
     ];
   }, [onHome, t]);
 

@@ -1,55 +1,92 @@
 "use client";
 
-import { Users, Swords, Trophy, Crown, Target, Flame } from "lucide-react";
+import { Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
+import { GAME_MODE_ICON_MAP } from "@/lib/game-mode-icons";
+import type { LandingGameModeItem } from "@/lib/game-modes-shared";
 
-export function GameModesSection() {
-  const { t } = useTranslation();
-  const gameModes = [
+type GameModesSectionProps = {
+  modes?: LandingGameModeItem[];
+};
+
+type DisplayMode = {
+  key: string;
+  Icon: (typeof GAME_MODE_ICON_MAP)[keyof typeof GAME_MODE_ICON_MAP];
+  title: string;
+  description: string;
+  players: string;
+  highlight: boolean;
+};
+
+function buildFallbackModes(t: (key: string) => string): DisplayMode[] {
+  return [
     {
-      icon: Swords,
+      key: "1v1",
+      Icon: GAME_MODE_ICON_MAP.swords,
       title: t("mode1v1Title"),
       description: t("mode1v1Desc"),
       players: t("mode1v1Players"),
       highlight: false,
     },
     {
-      icon: Users,
+      key: "team",
+      Icon: GAME_MODE_ICON_MAP.users,
       title: t("modeTeamTitle"),
       description: t("modeTeamDesc"),
       players: t("modeTeamPlayers"),
       highlight: true,
     },
     {
-      icon: Trophy,
+      key: "ranked",
+      Icon: GAME_MODE_ICON_MAP.trophy,
       title: t("modeRankedTitle"),
       description: t("modeRankedDesc"),
       players: t("modeRankedPlayers"),
       highlight: false,
     },
     {
-      icon: Crown,
+      key: "king",
+      Icon: GAME_MODE_ICON_MAP.crown,
       title: t("modeKingTitle"),
       description: t("modeKingDesc"),
       players: t("modeKingPlayers"),
       highlight: false,
     },
     {
-      icon: Target,
+      key: "training",
+      Icon: GAME_MODE_ICON_MAP.target,
       title: t("modeTrainingTitle"),
       description: t("modeTrainingDesc"),
       players: t("modeTrainingPlayers"),
       highlight: false,
     },
     {
-      icon: Flame,
+      key: "survival",
+      Icon: GAME_MODE_ICON_MAP.flame,
       title: t("modeSurvivalTitle"),
       description: t("modeSurvivalDesc"),
       players: t("modeSurvivalPlayers"),
       highlight: false,
     },
   ];
+}
+
+function toDisplayModes(modes: LandingGameModeItem[]): DisplayMode[] {
+  return modes.map((mode) => ({
+    key: mode.id,
+    Icon: GAME_MODE_ICON_MAP[mode.icon],
+    title: mode.title,
+    description: mode.description,
+    players: mode.playersLabel,
+    highlight: mode.isHighlight,
+  }));
+}
+
+export function GameModesSection({ modes }: GameModesSectionProps) {
+  const { t } = useTranslation();
+  const gameModes =
+    modes && modes.length > 0 ? toDisplayModes(modes) : buildFallbackModes(t);
 
   return (
     <section
@@ -69,7 +106,7 @@ export function GameModesSection() {
       <div className="relative z-10 grid w-full max-w-6xl grid-cols-1 justify-items-center gap-8 md:grid-cols-2 md:justify-items-stretch md:gap-10 lg:grid-cols-3 lg:justify-items-stretch">
         {gameModes.map((mode, index) => (
           <div
-            key={mode.title}
+            key={mode.key}
             className={cn(
               "group relative w-full max-w-md cursor-pointer rounded-2xl p-6 backdrop-blur-sm transition-all duration-500 md:max-w-none",
               "bg-card/60 shadow-lg shadow-black/20 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/35",
@@ -85,7 +122,7 @@ export function GameModesSection() {
                 "bg-primary/10 group-hover:bg-primary/20"
               )}
             >
-              <mode.icon className="h-7 w-7 text-primary" />
+              <mode.Icon className="h-7 w-7 text-primary" />
             </div>
 
             <h3 className="font-[var(--font-display)] mb-2 text-2xl font-bold tracking-wide text-foreground">
