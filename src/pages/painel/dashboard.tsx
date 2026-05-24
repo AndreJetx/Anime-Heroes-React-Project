@@ -3,6 +3,7 @@ import { GetServerSideProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { isPanelAuthenticatedFromReq } from "@/lib/panel-auth";
+import { fromDatetimeLocalValue, toDatetimeLocalValue } from "@/lib/tournament-countdown";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!isPanelAuthenticatedFromReq(context.req)) {
@@ -12,7 +13,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 export default function PainelDashboardPage() {
-  const [settings, setSettings] = useState({ downloadLink: "", downloadVersion: "" });
+  const [settings, setSettings] = useState({
+    downloadLink: "",
+    downloadVersion: "",
+    trailerUrl: "",
+    tournamentTitle: "",
+    tournamentStartsAt: null as string | null,
+  });
   const [carousel, setCarousel] = useState<{ id: string; imageUrl: string; sortOrder: number }[]>([]);
   const [unlockables, setUnlockables] = useState<
     { id: string; animeName: string; animeImageUrl: string | null; characterName: string; gameMode: string; usedCharacter: string }[]
@@ -90,7 +97,7 @@ export default function PainelDashboardPage() {
         {message && <p className="painel-msg">{message}</p>}
 
         <section className="painel-section">
-          <h2>Download (botão)</h2>
+          <h2>Download e trailer</h2>
           <form onSubmit={saveSettings}>
             <label>
               Link do Download
@@ -110,8 +117,55 @@ export default function PainelDashboardPage() {
                 placeholder="v0.99.2"
               />
             </label>
+            <label>
+              Link do trailer (YouTube)
+              <input
+                type="url"
+                value={settings.trailerUrl}
+                onChange={(e) => setSettings((s) => ({ ...s, trailerUrl: e.target.value }))}
+                placeholder="https://www.youtube.com/watch?v=..."
+              />
+            </label>
+            <p className="painel-hint">
+              Usado no botão &quot;Ver Trailer&quot; da página inicial (modal com vídeo incorporado).
+            </p>
             <button type="submit" disabled={saving}>
               {saving ? "Salvando…" : "Salvar"}
+            </button>
+          </form>
+        </section>
+
+        <section className="painel-section">
+          <h2>Próximo torneio</h2>
+          <form onSubmit={saveSettings}>
+            <label>
+              Nome do torneio
+              <input
+                type="text"
+                value={settings.tournamentTitle}
+                onChange={(e) => setSettings((s) => ({ ...s, tournamentTitle: e.target.value }))}
+                placeholder="Torneio Mundial 2026"
+              />
+            </label>
+            <label>
+              Data e hora de início
+              <input
+                type="datetime-local"
+                value={toDatetimeLocalValue(settings.tournamentStartsAt)}
+                onChange={(e) =>
+                  setSettings((s) => ({
+                    ...s,
+                    tournamentStartsAt: fromDatetimeLocalValue(e.target.value),
+                  }))
+                }
+              />
+            </label>
+            <p className="painel-hint">
+              Exibido no menu lateral com contagem regressiva (dias, horas e minutos). Deixe a data
+              vazia para ocultar o bloco no site.
+            </p>
+            <button type="submit" disabled={saving}>
+              {saving ? "Salvando…" : "Salvar torneio"}
             </button>
           </form>
         </section>

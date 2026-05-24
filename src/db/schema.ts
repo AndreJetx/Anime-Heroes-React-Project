@@ -4,6 +4,9 @@ export const siteSettings = pgTable("site_settings", {
   id: uuid("id").primaryKey().defaultRandom(),
   downloadLink: text("download_link").notNull().default(""),
   downloadVersion: text("download_version").notNull().default(""),
+  trailerUrl: text("trailer_url").notNull().default(""),
+  tournamentTitle: text("tournament_title").notNull().default(""),
+  tournamentStartsAt: timestamp("tournament_starts_at", { withTimezone: true }),
 });
 
 export const carouselSlide = pgTable("carousel_slide", {

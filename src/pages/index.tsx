@@ -1,12 +1,6 @@
 import React from "react";
-import Section from "@/components/Section";
-import Footer from "@/components/Footer";
+import { HomeLanding } from "@/components/landing/home-landing";
 
 export default function Home() {
-  return (
-    <>
-      <Section />
-      <Footer />
-    </>
-  );
+  return <HomeLanding />;
 }

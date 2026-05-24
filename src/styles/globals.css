@@ -1,13 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
 
-/* ===== Tema: azul escuro + branco (harmonizado com a logo) ===== */
+@custom-variant dark (&:is(.dark *));
+
+/* ===== Legado: guia, header, painel (variáveis originais em :root) ===== */
 :root {
   --primary: #0f2847;
   --primary-dark: #0a1628;
   --primary-light: #1a365d;
   --secondary: #ffffff;
   --dark-bg: #0a1628;
-  --card-bg: rgba(15, 40, 71, 0.70);
+  --card-bg: rgba(15, 40, 71, 0.7);
   --card-bg-solid: #0f2847;
   --border-color: rgba(255, 255, 255, 0.12);
   --border-light: rgba(255, 255, 255, 0.2);
@@ -20,32 +23,185 @@
   --shadow-celeste: rgba(135, 206, 235, 0.12);
 }
 
+/* ===== Landing (Tailwind / new_design): tokens só dentro de .landing-root ===== */
+.landing-root {
+  --background: oklch(0.12 0.01 260);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.15 0.015 260);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.13 0.01 260);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.45 0.2 260);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.2 0.02 260);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.22 0.015 260);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.45 0.2 260);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.3 0.03 260);
+  --input: oklch(0.18 0.015 260);
+  --ring: oklch(0.45 0.2 260);
+  --chart-1: oklch(0.45 0.2 260);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.1 0.01 260);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.45 0.2 260);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.18 0.015 260);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.3 0.03 260);
+  --sidebar-ring: oklch(0.45 0.2 260);
+}
+
+@theme inline {
+  --font-sans: var(--font-play), "Play", system-ui, sans-serif;
+  --font-display: var(--font-play), "Play", system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  /* Não aplicar borda ao canvas; fundo sólido no .landing-root esconde canvas com z-index negativo */
+  .landing-root :where(*):not(canvas) {
+    @apply border-border outline-ring/50;
+  }
+  .landing-root {
+    @apply relative isolate min-h-screen bg-transparent font-sans text-foreground antialiased;
+  }
+}
+
+/* Menu lateral: espaçamento ícone ↔ borda (garantido fora do reset universal) */
+.landing-side-menu [data-menu-accent] {
+  flex-shrink: 0;
+  align-self: center;
+  width: 4px;
+  height: 2rem;
+  margin-left: 0.875rem;
+  border-radius: 9999px;
+  background-color: transparent;
+}
+
+.landing-side-menu [data-menu-accent][data-active="true"] {
+  background-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.55);
+}
+
+.landing-side-menu [data-menu-body] {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  gap: 0.875rem;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+}
+
+.landing-side-menu [data-menu-collapsed] {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+
+.landing-side-menu [data-menu-news-body] {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 0.75rem;
+}
+
+.landing-side-menu [data-menu-news-label] {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
 html {
-  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 }
 
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   width: 100%;
-  background: var(--dark-bg);
-  color: var(--text-primary);
   position: relative;
   overflow-x: hidden;
+  font-family: "Play", system-ui, sans-serif;
 }
 
-body::before {
-  content: '';
+body.body--legacy-bg {
+  background: var(--dark-bg);
+  color: var(--text-primary);
+}
+
+body.body--legacy-bg::before {
+  content: "";
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/animebackground.webp');
+  background-image: url("/images/animebackground.webp");
   background-size: cover;
   background-position: center;
   filter: blur(2px);
@@ -54,18 +210,26 @@ body::before {
   pointer-events: none;
 }
 
-body::after {
-  content: '';
+body.body--legacy-bg::after {
+  content: "";
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
-  background-image: 
+  background-image:
     radial-gradient(ellipse 80% 50% at 20% 20%, rgba(26, 54, 93, 0.5) 0%, transparent 50%),
     radial-gradient(ellipse 60% 40% at 80% 80%, rgba(15, 40, 71, 0.4) 0%, transparent 50%),
     linear-gradient(135deg, rgba(10, 22, 40, 0.7) 0%, rgba(10, 22, 40, 0.85) 100%);
   z-index: -1;
   pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  body.body--legacy-bg::before {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% 20%, rgba(26, 54, 93, 0.5) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(15, 40, 71, 0.4) 0%, transparent 50%);
+  }
 }
 
 ul {
@@ -83,38 +247,35 @@ button {
   font-family: inherit;
 }
 
-h1, h2, h3, h4, h5, h6 {
+body.body--legacy-bg h1,
+body.body--legacy-bg h2,
+body.body--legacy-bg h3,
+body.body--legacy-bg h4,
+body.body--legacy-bg h5,
+body.body--legacy-bg h6 {
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-h1 {
+body.body--legacy-bg h1 {
   font-size: clamp(1.75rem, 5vw, 3.5rem);
 }
 
-h2 {
+body.body--legacy-bg h2 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-h3 {
+body.body--legacy-bg h3 {
   font-size: clamp(1.25rem, 3vw, 1.875rem);
 }
 
-p {
+body.body--legacy-bg p {
   font-size: clamp(0.875rem, 2vw, 1.125rem);
   line-height: 1.6;
   color: var(--text-secondary);
 }
 
-@media (max-width: 768px) {
-  body::before {
-    background-image: 
-      radial-gradient(ellipse 80% 50% at 20% 20%, rgba(26, 54, 93, 0.5) 0%, transparent 50%),
-      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(15, 40, 71, 0.4) 0%, transparent 50%);
-  }
-}
-
-/* Header */
+/* ===== Header (legado) ===== */
 .header-container {
   position: fixed;
   top: 0;
@@ -177,7 +338,6 @@ p {
   display: none;
 }
 
-/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -253,7 +413,61 @@ p {
   }
 }
 
-/* ===== Painel: inputs escuros (sobrescreve estilos do navegador) ===== */
+/* ===== Painel dentro do shell da landing (menu lateral + fundo) ===== */
+.painel-in-shell .painel-page,
+.painel-in-shell .painel-login {
+  background: transparent !important;
+  color: var(--foreground) !important;
+  min-height: auto !important;
+  max-width: 52rem;
+  margin-inline: auto;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.painel-in-shell .painel-header h1 {
+  color: var(--foreground) !important;
+}
+.painel-in-shell .painel-header a {
+  color: var(--primary);
+}
+.painel-in-shell .painel-header button {
+  border-color: var(--border);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+.painel-in-shell .painel-section {
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  color: var(--foreground);
+}
+.painel-in-shell .painel-section h2 {
+  color: var(--foreground) !important;
+}
+.painel-in-shell .painel-hint {
+  color: var(--muted-foreground);
+}
+.painel-in-shell .painel-section label input {
+  background: var(--input) !important;
+  border-color: var(--border) !important;
+  color: var(--foreground) !important;
+}
+.painel-in-shell .painel-list li {
+  border-color: var(--border);
+}
+.painel-in-shell .painel-msg {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.painel-in-shell .painel-section button[type="submit"] {
+  background: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+}
+.painel-in-shell .painel-list li button {
+  color: var(--muted-foreground);
+  border-color: var(--border);
+}
+
+/* ===== Painel ===== */
 .painel-page input[type="text"],
 .painel-page input[type="url"] {
   width: 100%;

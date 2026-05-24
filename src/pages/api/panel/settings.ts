@@ -1,47 +1,45 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { db } from "@/lib/db";
-import { siteSettings } from "@/db/schema";
-import { eq } from "drizzle-orm";
 import { isPanelAuthenticated } from "@/lib/panel-auth";
+import {
+  readSiteSettings,
+  SiteSettingsMigrationError,
+  writeSiteSettings,
+} from "@/lib/site-settings";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!isPanelAuthenticated(req)) {
     return res.status(401).json({ message: "Não autorizado" });
   }
+
   if (req.method === "GET") {
     try {
-      const [row] = await db.select().from(siteSettings).limit(1);
-      return res.status(200).json({
-        downloadLink: row?.downloadLink ?? "",
-        downloadVersion: row?.downloadVersion ?? "",
-      });
+      const data = await readSiteSettings();
+      return res.status(200).json(data);
     } catch (error) {
       const msg = error instanceof Error ? error.message : "Erro";
       return res.status(500).json({ message: msg });
     }
   }
+
   if (req.method !== "PUT") {
     return res.status(405).json({ message: "Method not allowed" });
   }
-  const { downloadLink, downloadVersion } = req.body ?? {};
+
+  const body = req.body ?? {};
+
   try {
-    const [existing] = await db.select().from(siteSettings).limit(1);
-    if (existing) {
-      await db
-        .update(siteSettings)
-        .set({
-          downloadLink: typeof downloadLink === "string" ? downloadLink : existing.downloadLink,
-          downloadVersion: typeof downloadVersion === "string" ? downloadVersion : existing.downloadVersion,
-        })
-        .where(eq(siteSettings.id, existing.id));
-    } else {
-      await db.insert(siteSettings).values({
-        downloadLink: typeof downloadLink === "string" ? downloadLink : "",
-        downloadVersion: typeof downloadVersion === "string" ? downloadVersion : "",
-      });
-    }
+    await writeSiteSettings({
+      downloadLink: body.downloadLink,
+      downloadVersion: body.downloadVersion,
+      trailerUrl: body.trailerUrl,
+      tournamentTitle: body.tournamentTitle,
+      tournamentStartsAt: body.tournamentStartsAt,
+    });
     return res.status(200).json({ success: true });
   } catch (error) {
+    if (error instanceof SiteSettingsMigrationError) {
+      return res.status(400).json({ message: error.message });
+    }
     const msg = error instanceof Error ? error.message : "Erro ao salvar";
     return res.status(500).json({ message: msg });
   }

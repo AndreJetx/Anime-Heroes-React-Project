@@ -1,8 +1,4 @@
-import path from "node:path";
 import type { NextApiRequest, NextApiResponse } from "next";
-import dotenv from "dotenv";
-
-dotenv.config({ path: path.resolve(process.cwd(), ".env") });
 
 const PANEL_COOKIE = "panel_session";
 
