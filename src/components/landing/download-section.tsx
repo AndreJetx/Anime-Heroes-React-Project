@@ -67,12 +67,12 @@ export function DownloadSection() {
       id="download"
       className="relative flex scroll-mt-28 flex-col items-center overflow-hidden px-5 py-0 sm:px-8 md:py-36 lg:py-0"
     >
-      <div className="absolute bottom-0 right-0 h-[600px] w-[600px] translate-x-1/2 translate-y-1/2 rounded-full bg-primary/10 blur-[150px]" />
+      <div className="absolute bottom-0 right-0 h-56 w-56 translate-x-1/3 translate-y-1/3 rounded-full bg-primary/10 blur-[80px] md:h-[600px] md:w-[600px] md:translate-x-1/2 md:translate-y-1/2 md:blur-[150px]" />
 
       <div className="relative z-10 mb-8 w-full max-w-3xl px-2 text-center md:mb-20 lg:mb-24">
         <h2 className="font-[var(--font-display)] mb-4 text-5xl font-bold tracking-wider md:text-7xl">
-          <span className="text-foreground">BAIXE</span>
-          <span className="text-primary"> AGORA</span>
+          <span className="text-foreground">{t("downloadTitle1")}</span>
+          <span className="text-primary"> {t("downloadTitle2")}</span>
         </h2>
         <p className="mx-auto max-w-xl text-pretty text-muted-foreground">{t("downloadtext")}</p>
       </div>
@@ -84,7 +84,7 @@ export function DownloadSection() {
               <Monitor className="h-8 w-8 text-primary" />
             </div>
             <div className="text-left">
-              <p className="text-lg font-bold text-foreground">Windows</p>
+              <p className="text-lg font-bold text-foreground">{t("downloadWindows")}</p>
               <p className="text-sm text-muted-foreground">{downloadVersion}</p>
             </div>
           </div>
@@ -113,7 +113,7 @@ export function DownloadSection() {
           onMouseLeave={() => setIsHovering(false)}
         >
           <h3 className="font-[var(--font-display)] mb-6 text-center text-2xl font-bold tracking-wide text-foreground">
-            CAPTURAS DE TELA
+            {t("screenshotsTitle")}
           </h3>
 
           <div className="group relative aspect-video w-full overflow-hidden rounded-2xl bg-card shadow-2xl shadow-black/30">
@@ -141,10 +141,10 @@ export function DownloadSection() {
                   <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                     <div>
                       <span className="text-xs font-medium uppercase tracking-wider text-primary">
-                        Screenshot
+                        {t("screenshotLabel")}
                       </span>
                       <h3 className="text-xl font-bold text-foreground">
-                        {index + 1} / {slides.length}
+                        {t("screenshotCounter", { current: index + 1, total: slides.length })}
                       </h3>
                     </div>
                   </div>
@@ -160,7 +160,7 @@ export function DownloadSection() {
                 "transition-all duration-300 hover:scale-110 hover:text-primary hover:ring-2 hover:ring-primary/40",
                 isHovering ? "opacity-100" : "opacity-0 md:group-hover:opacity-100"
               )}
-              aria-label="Anterior"
+              aria-label={t("carouselPrev")}
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
@@ -172,7 +172,7 @@ export function DownloadSection() {
                 "transition-all duration-300 hover:scale-110 hover:text-primary hover:ring-2 hover:ring-primary/40",
                 isHovering ? "opacity-100" : "opacity-0 md:group-hover:opacity-100"
               )}
-              aria-label="Próximo"
+              aria-label={t("carouselNext")}
             >
               <ChevronRight className="h-6 w-6" />
             </button>
@@ -190,7 +190,7 @@ export function DownloadSection() {
                     ? "scale-110 ring-primary shadow-[0_0_15px_rgba(30,64,175,0.5)]"
                     : "opacity-50 hover:opacity-100 hover:ring-primary/35"
                 )}
-                aria-label={`Slide ${index + 1}`}
+                aria-label={t("carouselSlide", { n: index + 1 })}
               >
                 <Image
                   src={src}

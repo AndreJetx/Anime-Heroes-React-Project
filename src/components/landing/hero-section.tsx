@@ -34,9 +34,9 @@ export function HeroSection() {
       id="hero"
       className="relative flex min-h-screen flex-col overflow-hidden scroll-mt-0 pt-[4.75rem] sm:pt-20 md:pt-24 lg:pt-28"
     >
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-background/25 to-background/90" />
-      <div className="absolute left-1/4 top-1/4 h-96 w-96 animate-pulse rounded-full bg-primary/20 blur-[128px]" />
-      <div className="absolute bottom-1/4 right-1/4 h-96 w-96 animate-pulse rounded-full bg-primary/10 blur-[128px] [animation-delay:1s]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background/90 md:via-background/25" />
+      <div className="absolute left-1/2 top-[10%] h-44 w-44 -translate-x-1/2 animate-pulse rounded-full bg-primary/15 blur-[72px] md:left-1/4 md:top-1/4 md:h-96 md:w-96 md:translate-x-0 md:blur-[128px]" />
+      <div className="absolute bottom-[15%] right-[5%] h-40 w-40 animate-pulse rounded-full bg-primary/10 blur-[64px] md:bottom-1/4 md:right-1/4 md:h-96 md:w-96 md:blur-[128px] [animation-delay:1s]" />
 
       <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-5 pb-28 sm:px-8 md:pb-36">
         <div className="flex w-full max-w-5xl flex-col items-center text-center">
@@ -49,7 +49,7 @@ export function HeroSection() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2">
               <Zap className="h-4 w-4 shrink-0 text-primary" />
-              <span className="text-sm font-medium text-primary">NOVO PERSONAGEM DISPONÍVEL</span>
+              <span className="text-sm font-medium text-primary">{t("heroBadgeNew")}</span>
             </div>
           </div>
 
@@ -98,7 +98,7 @@ export function HeroSection() {
                 "hover:shadow-[0_0_50px_rgba(30,64,175,0.6)]"
               )}
             >
-              <span className="relative z-10">JOGAR AGORA</span>
+              <span className="relative z-10">{t("heroPlayNow")}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-blue-800 opacity-0 transition-opacity group-hover:opacity-100" />
             </a>
 
@@ -113,7 +113,7 @@ export function HeroSection() {
               <div className="rounded-full bg-primary/20 p-2 transition-colors group-hover:bg-primary/30">
                 <Play className="h-4 w-4 fill-current text-primary" />
               </div>
-              <span className="font-medium">Ver Trailer</span>
+              <span className="font-medium">{t("heroWatchTrailer")}</span>
             </button>
           </div>
 
@@ -125,9 +125,9 @@ export function HeroSection() {
             )}
           >
             {[
-              { value: "2M+", label: "Jogadores" },
-              { value: "32", label: "Heróis" },
-              { value: "15", label: "Arenas" },
+              { value: "2M+", label: t("heroStatPlayers") },
+              { value: "32", label: t("heroStatHeroes") },
+              { value: "15", label: t("heroStatArenas") },
             ].map((stat) => (
               <div key={stat.label} className="w-full max-w-[7rem] text-center sm:max-w-none">
                 <div className="font-[var(--font-display)] mb-1 text-3xl font-bold text-primary sm:text-4xl md:text-5xl">

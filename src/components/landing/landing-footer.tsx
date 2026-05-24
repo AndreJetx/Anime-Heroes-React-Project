@@ -15,41 +15,43 @@ const socialIcons = [
 
 export function LandingFooter() {
   const { t } = useTranslation();
+  const year = new Date().getFullYear();
+
   const footerLinks = [
     {
-      title: "Jogo",
+      title: t("footerGame"),
       links: [
-        { label: "Personagens", href: "#characters" },
-        { label: "Modos de Jogo", href: "#modes" },
-        { label: "Download", href: "#download" },
-        { label: "FAQ", href: "#FAQ" },
+        { label: t("navcharacters"), href: "#characters" },
+        { label: t("navmodes"), href: "#modes" },
+        { label: t("navdownload"), href: "#download" },
+        { label: t("navfaq"), href: "#FAQ" },
       ],
     },
     {
-      title: "Site",
+      title: t("footerSite"),
       links: [
         { label: t("navhome"), href: "/" },
         { label: t("navguide"), href: "/guide" },
         { label: t("navdownload"), href: "#download" },
-        { label: "Painel", href: "/painel" },
+        { label: t("navpainel"), href: "/painel" },
       ],
     },
     {
-      title: "Suporte",
+      title: t("footerSupport"),
       links: [
-        { label: "Central de Ajuda", href: "#" },
-        { label: "Contato", href: "#" },
-        { label: "FAQ", href: "#FAQ" },
-        { label: "Reportar Bug", href: "#" },
+        { label: t("footerHelp"), href: "#" },
+        { label: t("footerContact"), href: "#" },
+        { label: t("navfaq"), href: "#FAQ" },
+        { label: t("footerReportBug"), href: "#" },
       ],
     },
     {
-      title: "Legal",
+      title: t("footerLegal"),
       links: [
-        { label: "Termos de Uso", href: "#" },
-        { label: "Privacidade", href: "#" },
-        { label: "Cookies", href: "#" },
-        { label: "EULA", href: "#" },
+        { label: t("footerTerms"), href: "#" },
+        { label: t("footerPrivacy"), href: "#" },
+        { label: t("footerCookies"), href: "#" },
+        { label: t("footerEula"), href: "#" },
       ],
     },
   ];
@@ -66,9 +68,7 @@ export function LandingFooter() {
               height={100}
               className="mb-4 h-16 w-auto object-contain"
             />
-            <p className="mb-6 text-sm text-muted-foreground">
-              O jogo de luta de anime definitivo. Entre na arena e prove seu valor.
-            </p>
+            <p className="mb-6 text-sm text-muted-foreground">{t("footerTagline")}</p>
             <div className="flex justify-center gap-3 md:justify-start">
               {socialIcons.map((social, index) => (
                 <a
@@ -90,7 +90,7 @@ export function LandingFooter() {
               <h4 className="mb-4 font-bold text-foreground">{section.title}</h4>
               <ul className="space-y-2">
                 {section.links.map((link) => (
-                  <li key={link.label}>
+                  <li key={`${section.title}-${link.label}`}>
                     <Link
                       href={link.href}
                       className="text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -106,10 +106,10 @@ export function LandingFooter() {
 
         <div className="flex flex-col items-center justify-between gap-6 pt-12 md:flex-row md:pt-16">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Anime Heroes. Todos os direitos reservados.
+            {t("footerCopyright", { year })}
           </p>
           <p className="flex items-center gap-1 text-sm text-muted-foreground">
-            Feito com <Heart className="h-4 w-4 fill-current text-primary" /> para gamers
+            {t("footerMadeFor")} <Heart className="h-4 w-4 fill-current text-primary" />
           </p>
         </div>
       </div>

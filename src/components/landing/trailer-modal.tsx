@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 export type TrailerModalProps = {
   isOpen: boolean;
@@ -12,6 +13,7 @@ export type TrailerModalProps = {
 };
 
 export function TrailerModal({ isOpen, onClose, embedUrl }: TrailerModalProps) {
+  const { t } = useTranslation();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -36,7 +38,7 @@ export function TrailerModal({ isOpen, onClose, embedUrl }: TrailerModalProps) {
       className="fixed inset-0 z-[100] flex items-center justify-center bg-background/85 p-4 backdrop-blur-md sm:p-6"
       role="dialog"
       aria-modal="true"
-      aria-label="Trailer"
+      aria-label={t("trailerModalLabel")}
       onClick={onClose}
     >
       <div
@@ -50,7 +52,7 @@ export function TrailerModal({ isOpen, onClose, embedUrl }: TrailerModalProps) {
           {embedUrl ? (
             <iframe
               src={embedUrl}
-              title="Trailer Anime Heroes"
+              title={t("trailerModalLabel")}
               className="absolute inset-0 h-full w-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -58,7 +60,7 @@ export function TrailerModal({ isOpen, onClose, embedUrl }: TrailerModalProps) {
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-black px-6 text-center text-sm text-muted-foreground sm:text-base">
-              Nenhum trailer configurado no painel. Adicione um link do YouTube em Painel → Download / Trailer.
+              {t("trailerNoConfig")}
             </div>
           )}
 
@@ -70,7 +72,7 @@ export function TrailerModal({ isOpen, onClose, embedUrl }: TrailerModalProps) {
               "bg-black/75 text-white shadow-lg backdrop-blur-sm",
               "transition-colors hover:bg-black/90"
             )}
-            aria-label="Fechar trailer"
+            aria-label={t("closeTrailer")}
           >
             <X className="h-5 w-5" />
           </button>

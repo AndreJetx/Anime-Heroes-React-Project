@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { X, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useSiteUpdates } from "@/contexts/site-updates";
+import { useTranslation } from "react-i18next";
 
 export interface NewsModalProps {
   isOpen: boolean;
@@ -25,6 +26,7 @@ function formatUpdateDate(value: string): string {
 
 export function NewsModal({ isOpen, onClose }: NewsModalProps) {
   const [mounted, setMounted] = useState(false);
+  const { t } = useTranslation();
   const { updates, loading, error, refresh } = useSiteUpdates();
 
   useEffect(() => setMounted(true), []);
@@ -64,7 +66,7 @@ export function NewsModal({ isOpen, onClose }: NewsModalProps) {
         )}
         role="dialog"
         aria-modal="true"
-        aria-label="Novidades"
+        aria-label={t("navupdates")}
       >
         <header
           className={cn(
@@ -77,9 +79,9 @@ export function NewsModal({ isOpen, onClose }: NewsModalProps) {
           <div className="flex items-center justify-between gap-4">
             <div>
               <h2 className="font-[var(--font-display)] text-3xl font-bold tracking-wider text-white">
-                NOVIDADES
+                {t("newsTitle")}
               </h2>
-              <p className="text-sm text-zinc-400">Últimas atualizações do jogo</p>
+              <p className="text-sm text-zinc-400">{t("newsSubtitle")}</p>
             </div>
             <button
               type="button"
@@ -89,7 +91,7 @@ export function NewsModal({ isOpen, onClose }: NewsModalProps) {
                 "bg-white/10 text-zinc-300 hover:bg-blue-500/20 hover:text-white",
                 "transition-all duration-300 hover:rotate-90"
               )}
-              aria-label="Fechar"
+              aria-label={t("close")}
             >
               <X className="h-6 w-6" />
             </button>
@@ -98,13 +100,11 @@ export function NewsModal({ isOpen, onClose }: NewsModalProps) {
 
         <div className="space-y-4 p-6">
             {loading && updates.length === 0 ? (
-              <p className="py-8 text-center text-sm text-zinc-400">Carregando…</p>
+              <p className="py-8 text-center text-sm text-zinc-400">{t("loading")}</p>
             ) : error && updates.length === 0 ? (
               <p className="py-8 text-center text-sm text-red-400">{error}</p>
             ) : updates.length === 0 ? (
-              <p className="py-8 text-center text-sm text-zinc-400">
-                Nenhuma atualização no momento.
-              </p>
+            <p className="py-8 text-center text-sm text-zinc-400">{t("newsEmpty")}</p>
             ) : (
               updates.map((news, index) => (
                 <article

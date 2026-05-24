@@ -33,9 +33,7 @@ export function UnlockablesList() {
 
   if (list.length === 0) {
     return (
-      <p className="text-center text-sm text-zinc-500">
-        Nenhum personagem desbloqueável cadastrado no momento.
-      </p>
+      <p className="text-center text-sm text-zinc-500">{t("unlockablesEmpty")}</p>
     );
   }
 

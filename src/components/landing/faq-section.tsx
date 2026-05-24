@@ -26,7 +26,7 @@ export function FaqSection() {
       <div className="flex w-full max-w-5xl flex-col items-center">
         <div className="mb-8 w-full max-w-3xl px-2 text-center md:mb-20 lg:mb-24">
           <h2 className="font-[var(--font-display)] mb-4 text-5xl font-bold tracking-wider md:text-6xl">
-            FAQ
+            {t("faqTitle")}
           </h2>
           <p className="text-pretty text-muted-foreground">{t("faqtext")}</p>
         </div>

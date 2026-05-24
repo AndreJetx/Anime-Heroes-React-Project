@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Sword, Shield, Zap, Wind } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
@@ -14,47 +14,51 @@ const characterColors = [
 
 export function CharactersSection() {
   const { t } = useTranslation();
-  const characters = [
+  const characters = useMemo(() => [
     {
       id: 1,
-      name: "MARTIAL",
+      name: t("charNameMartial"),
       title: t("stylemartialartist"),
-      description: t("stylemartialartist"),
+      description: t("stylemartialartistDesc"),
       stats: { attack: 95, defense: 70, speed: 60 },
       image: "/images/martialartist.png",
       color: characterColors[0],
     },
     {
       id: 2,
-      name: "SWORD",
+      name: t("charNameSword"),
       title: t("styleswordsman"),
-      description: t("styleswordsman"),
+      description: t("styleswordsmanDesc"),
       stats: { attack: 80, defense: 50, speed: 78 },
       image: "/images/swordsman.png",
       color: characterColors[1],
     },
     {
       id: 3,
-      name: "MAGE",
+      name: t("charNameMage"),
       title: t("stylemage"),
-      description: t("stylemage"),
+      description: t("stylemageDesc"),
       stats: { attack: 88, defense: 55, speed: 50 },
       image: "/images/mage.png",
       color: characterColors[2],
     },
     {
       id: 4,
-      name: "FIST",
+      name: t("charNameFist"),
       title: t("stylemagicfist"),
-      description: t("stylemagicfist"),
+      description: t("stylemagicfistDesc"),
       stats: { attack: 90, defense: 45, speed: 72 },
       image: "/images/magicfist.png",
       color: characterColors[3],
     },
-  ];
+  ], [t]);
 
   const [activeCharacter, setActiveCharacter] = useState(characters[0]!);
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    setActiveCharacter((prev) => characters.find((c) => c.id === prev.id) ?? characters[0]!);
+  }, [characters]);
 
   const handleCharacterChange = (character: (typeof characters)[number]) => {
     if (character.id === activeCharacter.id) return;
@@ -72,8 +76,8 @@ export function CharactersSection() {
     >
       <div className="mx-auto mb-8 w-full max-w-3xl px-2 text-center md:mb-20 lg:mb-24">
         <h2 className="font-[var(--font-display)] mb-4 text-5xl font-bold tracking-wider md:text-7xl">
-          <span className="text-foreground">ESCOLHA SEU</span>
-          <span className="text-primary"> ESTILO</span>
+          <span className="text-foreground">{t("charactersTitle1")}</span>
+          <span className="text-primary"> {t("charactersTitle2")}</span>
         </h2>
         <p className="mx-auto max-w-xl text-pretty text-muted-foreground">{t("styledescription")}</p>
       </div>
@@ -115,9 +119,9 @@ export function CharactersSection() {
               <div className="mt-6 space-y-3">
                 {(
                   [
-                    { icon: Sword, label: "Ataque", value: activeCharacter.stats.attack },
-                    { icon: Shield, label: "Defesa", value: activeCharacter.stats.defense },
-                    { icon: Wind, label: "Velocidade", value: activeCharacter.stats.speed },
+                    { icon: Sword, label: t("statAttack"), value: activeCharacter.stats.attack },
+                    { icon: Shield, label: t("statDefense"), value: activeCharacter.stats.defense },
+                    { icon: Wind, label: t("statSpeed"), value: activeCharacter.stats.speed },
                   ] as const
                 ).map((stat) => (
                   <div key={stat.label} className="flex items-center gap-3">

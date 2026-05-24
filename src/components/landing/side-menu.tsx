@@ -128,7 +128,7 @@ function MenuContent({
             type="button"
             onClick={onCloseDrawer}
             className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
-            aria-label="Fechar menu"
+            aria-label={t("closeMenu")}
           >
             <X className="h-5 w-5" />
           </button>
@@ -162,7 +162,7 @@ function MenuContent({
               "bg-blue-600 text-white shadow-lg shadow-blue-600/25 ring-2 ring-[#070b14]",
               "transition-transform duration-200 hover:scale-110 hover:bg-blue-500"
             )}
-            aria-label={expanded ? "Recolher menu" : "Expandir menu"}
+            aria-label={expanded ? t("collapseMenu") : t("expandMenu")}
           >
             {expanded ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
           </button>
@@ -243,16 +243,16 @@ function MenuContent({
                 "flex h-14 w-full shrink-0 rounded-xl bg-blue-950/45 text-blue-400 transition-colors duration-200",
                 "hover:bg-blue-950/70 hover:text-blue-300"
               )}
-              title={!expanded ? "Novidades" : undefined}
+              title={!expanded ? t("navupdates") : undefined}
             >
               {expanded ? (
                 <>
                   <span data-menu-accent data-active="false" aria-hidden />
                   <span data-menu-news-body className="text-blue-400">
                     <Newspaper className={cn(iconClass, "shrink-0 text-blue-400")} />
-                    <span data-menu-news-label>Novidades</span>
+                    <span data-menu-news-label>{t("navupdates")}</span>
                     <span className="shrink-0 rounded-full bg-blue-600 px-2 py-0.5 text-[9px] font-bold uppercase leading-none tracking-wide text-white shadow-sm shadow-blue-600/40">
-                      NOVO
+                      {t("badgeNew")}
                     </span>
                   </span>
                 </>
@@ -323,7 +323,7 @@ function MenuContent({
             {tournamentTitle ? (
               <p className="mb-1 text-sm font-semibold text-zinc-200">{tournamentTitle}</p>
             ) : null}
-            <p className="mb-3 text-xs text-zinc-500">Próximo torneio em</p>
+            <p className="mb-3 text-xs text-zinc-500">{t("tournamentCountdown")}</p>
             <div className="flex flex-wrap gap-2.5 text-sm font-bold text-blue-400">
               <span className="rounded-lg bg-blue-950/60 px-2.5 py-1 text-blue-300">
                 {formatCountdownUnit(tournamentCountdown.days)}D
@@ -445,11 +445,11 @@ export function SideMenu() {
     const h = (id: string) => (onHome ? `#${id}` : `/#${id}`);
     return [
       { key: "hero", icon: Home, label: t("navhome"), href: onHome ? "#hero" : "/#hero" },
-      { key: "characters", icon: Gamepad2, label: "Personagens", href: h("characters") },
-      { key: "modes", icon: Trophy, label: "Modos de Jogo", href: h("modes") },
-      { key: "community", icon: Users, label: "Comunidade", href: h("community") },
+      { key: "characters", icon: Gamepad2, label: t("navcharacters"), href: h("characters") },
+      { key: "modes", icon: Trophy, label: t("navmodes"), href: h("modes") },
+      { key: "community", icon: Users, label: t("navcommunity"), href: h("community") },
       { key: "download", icon: Download, label: t("navdownload"), href: h("download") },
-      { key: "painel", icon: LayoutDashboard, label: "Painel", href: "/painel" },
+      { key: "painel", icon: LayoutDashboard, label: t("navpainel"), href: "/painel" },
     ];
   }, [onHome, t]);
 
@@ -513,7 +513,7 @@ export function SideMenu() {
             "border border-white/10 bg-[#070b14]/95 text-white shadow-lg shadow-black/40 backdrop-blur-md",
             "transition-transform hover:scale-105 active:scale-95"
           )}
-          aria-label="Abrir menu"
+          aria-label={t("openMenu")}
         >
           <MoreVertical className="h-6 w-6" />
         </button>
@@ -536,7 +536,7 @@ export function SideMenu() {
             )}
             role="dialog"
             aria-modal="true"
-            aria-label="Menu de navegação"
+            aria-label={t("navMenuLabel")}
           >
             <MenuContent
               {...sharedMenuProps}

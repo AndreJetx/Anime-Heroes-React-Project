@@ -9,44 +9,44 @@ export function GameModesSection() {
   const gameModes = [
     {
       icon: Swords,
-      title: "DUELO 1v1",
-      description: "Enfrente seu oponente em combate direto. Sem desculpas, apenas habilidade pura.",
-      players: "2 Jogadores",
+      title: t("mode1v1Title"),
+      description: t("mode1v1Desc"),
+      players: t("mode1v1Players"),
       highlight: false,
     },
     {
       icon: Users,
-      title: "BATALHA EM EQUIPE",
-      description: t("cooptext"),
-      players: "2v2 até 5v5",
+      title: t("modeTeamTitle"),
+      description: t("modeTeamDesc"),
+      players: t("modeTeamPlayers"),
       highlight: true,
     },
     {
       icon: Trophy,
-      title: "RANQUEADA",
-      description: "Suba no ranking global e prove que você é o melhor lutador do mundo.",
-      players: "Competitivo",
+      title: t("modeRankedTitle"),
+      description: t("modeRankedDesc"),
+      players: t("modeRankedPlayers"),
       highlight: false,
     },
     {
       icon: Crown,
-      title: "REI DA COLINA",
-      description: "Seja o último de pé e conquiste o título de Rei da Arena.",
-      players: "8 Jogadores",
+      title: t("modeKingTitle"),
+      description: t("modeKingDesc"),
+      players: t("modeKingPlayers"),
       highlight: false,
     },
     {
       icon: Target,
-      title: "TREINAMENTO",
-      description: "Aprimore suas técnicas e combos no modo de treino ilimitado.",
-      players: "Solo",
+      title: t("modeTrainingTitle"),
+      description: t("modeTrainingDesc"),
+      players: t("modeTrainingPlayers"),
       highlight: false,
     },
     {
       icon: Flame,
-      title: "SOBREVIVÊNCIA",
-      description: "Enfrente ondas infinitas de inimigos e veja até onde você consegue chegar.",
-      players: "1-4 Jogadores",
+      title: t("modeSurvivalTitle"),
+      description: t("modeSurvivalDesc"),
+      players: t("modeSurvivalPlayers"),
       highlight: false,
     },
   ];
@@ -56,12 +56,12 @@ export function GameModesSection() {
       id="modes"
       className="relative flex scroll-mt-28 flex-col items-center overflow-hidden px-5 py-0 sm:px-8 md:py-36 lg:py-0"
     >
-      <div className="absolute left-0 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[128px]" />
+      <div className="absolute left-0 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[72px] md:h-[500px] md:w-[500px] md:blur-[128px]" />
 
       <div className="relative z-10 mb-8 w-full max-w-3xl px-2 text-center md:mb-20 lg:mb-24">
         <h2 className="font-[var(--font-display)] mb-4 text-5xl font-bold tracking-wider md:text-7xl">
-          <span className="text-foreground">MODOS DE</span>
-          <span className="text-primary"> JOGO</span>
+          <span className="text-foreground">{t("gameModesTitle1")}</span>
+          <span className="text-primary"> {t("gameModesTitle2")}</span>
         </h2>
         <p className="mx-auto max-w-xl text-pretty text-muted-foreground">{t("jointofight")}</p>
       </div>
@@ -102,7 +102,7 @@ export function GameModesSection() {
 
             {mode.highlight && (
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold text-primary-foreground">
-                POPULAR
+                {t("modePopular")}
               </div>
             )}
           </div>
